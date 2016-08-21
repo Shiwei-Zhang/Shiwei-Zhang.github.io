@@ -61,6 +61,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/hexo搭建博客/" class="article-date">
+  <time datetime="2016-08-21T16:53:17.000Z" itemprop="datePublished">2016-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/hexo搭建博客/">hexo搭建博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hexo搭建静态博客"><a href="#Hexo搭建静态博客" class="headerlink" title="Hexo搭建静态博客"></a>Hexo搭建静态博客</h2><p>Hexo 是一款基于 Node.js 的快速的、简单的博客框架，能够创建一个项目进行编辑后生成一套静态网页，比较适合个人博客搭建。因为 Hexo 生成的网页不依赖数据库和任何 Web 工具，所以可以把它放在 Github上，然后配置好域名以后进行访问。</p>
+<h3 id="1-安装前置条件"><a href="#1-安装前置条件" class="headerlink" title="1.安装前置条件"></a>1.安装前置条件</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
+<ul>
+<li>node.JS</li>
+<li>git</li>
+</ul>
+<h3 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2.安装hexo"></a>2.安装hexo</h3><ul>
+<li>windows</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<ul>
+<li>mac安装</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<h3 id="3-初始化博客"><a href="#3-初始化博客" class="headerlink" title="3.初始化博客"></a>3.初始化博客</h3><ul>
+<li><p>初始博客文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init blog</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装所需模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd blog &amp;&amp; npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动服务查看基本结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-新建文章"><a href="#4-新建文章" class="headerlink" title="4.新建文章"></a>4.新建文章</h3><ul>
+<li>添加文章为md格式来进行编写<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;文章名&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-发布到git上"><a href="#5-发布到git上" class="headerlink" title="5.发布到git上"></a>5.发布到git上</h3><ul>
+<li><p>下载hexo-deployer-git插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改_config.yml(blog根目录下)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: &lt;repository url&gt;</div><div class="line">  branch: master</div><div class="line">  message: push</div></pre></td></tr></table></figure>
+</li>
+<li><p>在github上新建仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new repository</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Repository name(仓库的名称)必须是<code>账户名.gitbub.io</code><br>配置repo：<code>http//Repository name:passwords@repository url</code></p>
+<ul>
+<li><p>部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+<li><p>每次部署的步骤，可按以下三步来进行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cis4w8moa00012cqsth0xo1ol" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/22/markdown/" class="article-date">
@@ -241,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/markdown/" data-id="cis4ul4i6000128qs2dg3xc63" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/markdown/" data-id="cis4w8mol00022cqson4i4xbx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -286,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hello-world/" data-id="cis4ul4i1000028qs7be7lnj1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/hello-world/" data-id="cis4w8mo400002cqssdc976uj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,6 +411,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/08/22/hexo搭建博客/">hexo搭建博客</a>
+          </li>
         
           <li>
             <a href="/2016/08/22/markdown/">markdown</a>
