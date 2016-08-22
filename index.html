@@ -85,10 +85,7 @@
       
         <h2 id="1-git的安装"><a href="#1-git的安装" class="headerlink" title="1.git的安装"></a>1.git的安装</h2><ul>
 <li>windows下安装<br><a href="http://git-scm.com" target="_blank" rel="external">下载地址</a></li>
-<li>mac下安装<br><a href="http://brew.sh" target="_blank" rel="external">下载Homebrew</a><blockquote>
-<p>拷贝对应脚本到终端下安装HomeBrew<br>然后在终端执行 brew install git命令安装*git<br>安装xcode会默认下载git</p>
-</blockquote>
-</li>
+<li>mac下安装<br><a href="http://brew.sh" target="_blank" rel="external">下载Homebrew</a><br>拷贝对应脚本到终端下安装HomeBrew<br>然后在终端执行 brew install git命令安装*git<br>安装xcode会默认下载git</li>
 </ul>
 <h2 id="2-告诉git你是谁"><a href="#2-告诉git你是谁" class="headerlink" title="2.告诉git你是谁"></a>2.告诉git你是谁</h2><p>如果不配置不能提交代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global user.name &quot;用户名&quot; //最好使用github的用户名</div></pre></td></tr></table></figure></p>
 <p>查看配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name</div><div class="line">git config --list</div></pre></td></tr></table></figure></p>
@@ -106,18 +103,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
 <p>修改时通过git status查看当前状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git status</div></pre></td></tr></table></figure></p>
-</blockquote>
 <h2 id="5-文件操作"><a href="#5-文件操作" class="headerlink" title="5.文件操作"></a>5.文件操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch index.txt</div></pre></td></tr></table></figure>
 <ul>
 <li><p>向文件内写入内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo hello &gt; index.txt</div></pre></td></tr></table></figure>
 </li>
-<li><p>查看文件内容<br>cat index.txt</p>
-<blockquote>
-<p>红色表示未加入暂存区内</p>
-</blockquote>
+<li><p>查看文件内容<br>cat index.txt<br>红色表示未加入暂存区内</p>
 </li>
 <li><p>添加文件到缓存区中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add file</div><div class="line">git add . / -A</div></pre></td></tr></table></figure>
@@ -126,9 +118,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m&quot;此次提交的注释内容&quot;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
 <p>提交到版本库中通过git log 进行查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git log --oneline</div></pre></td></tr></table></figure></p>
-</blockquote>
 <h2 id="6-比较"><a href="#6-比较" class="headerlink" title="6.比较"></a>6.比较</h2><p>比较工作区和缓存区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff</div></pre></td></tr></table></figure></p>
 <p>比较缓存区和历史区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git dif --cached(--staged)</div></pre></td></tr></table></figure></p>
 <p>比较工作区和历史区(版本库)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git diff master</div></pre></td></tr></table></figure></p>
@@ -143,9 +133,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit --amend //可以选择是否用以前的提交注释</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
 <p>如果进入编辑模式按esc键 输入:wq</p>
-</blockquote>
 <h2 id="8-删除"><a href="#8-删除" class="headerlink" title="8.删除"></a>8.删除</h2><ul>
 <li><p>删除缓存区，但是要保证工作区里内容必须不存在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rm &apos;文件名&apos;</div></pre></td></tr></table></figure>
@@ -172,10 +160,7 @@
 </li>
 </ul>
 <h2 id="10-同步远程仓库"><a href="#10-同步远程仓库" class="headerlink" title="10.同步远程仓库"></a>10.同步远程仓库</h2><ul>
-<li><p>github</p>
-<blockquote>
-<p>注册账号<br>新建项目</p>
-</blockquote>
+<li><p>github<br>注册账号<br>新建项目</p>
 </li>
 <li><p>创建仓库后需要关联远程仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin &apos;仓库的地址&apos;</div></pre></td></tr></table></figure>
@@ -184,16 +169,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ touch .gitignore</div><div class="line">  $ echo .DS_Store</div><div class="line">  $ echo node_modules</div><div class="line">  $ echo .idea</div><div class="line">```  </div><div class="line">  </div><div class="line">- 推送到远程仓库</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>git push origin master -u<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; -u的意思是upstream 如果下次再提交可以直接使用git push</div><div class="line"></div><div class="line">- 查看</div></pre></td></tr></table></figure></p>
+<p>git push origin master -u<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-u的意思是upstream 如果下次再提交可以直接使用git push</div><div class="line"></div><div class="line">- 查看</div></pre></td></tr></table></figure></p>
 <p>$ git remote 查看名字<br>$ git remote -v 查看地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 11.代码合并</div><div class="line">- git fetch</div></pre></td></tr></table></figure></p>
-<p>$ git fetch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">拉取过来手动合并</div></pre></td></tr></table></figure></p>
+<p>$ git fetch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">拉取过来手动合并</div></pre></td></tr></table></figure></p>
 <p>$ git diff master origin/master<br>  $ git merge origin/master<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- git pull #</div><div class="line">  拉取并合并</div></pre></td></tr></table></figure></p>
-<p>git pull<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">## 12.注意 </div><div class="line">- 从工作区 直接提交到历史区（必须走一下过渡区）</div></pre></td></tr></table></figure></p>
+<p>git pull<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 12.注意 </div><div class="line"></div><div class="line">- 从工作区 直接提交到历史区（必须走一下过渡区）</div></pre></td></tr></table></figure></p>
 <p>git commit -a -m”add 7788”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 有冲突我们需要先把最新的拉下来</div><div class="line">先使用git fetch拉下来 我们可以先比较一下不同在合并</div></pre></td></tr></table></figure></p>
-<p>git fetch<br>git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 解决冲突 </div><div class="line">去掉&gt;&gt;&gt;&gt;  ==== &lt;&lt;&lt;&lt; 保存剩余的再次提交即可</div></pre></td></tr></table></figure></p>
-<p>git pull  = get fetch + git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">## 13.作业提交流程</div><div class="line">#### 第一次提交作业(组长)</div><div class="line">- `fork`讲师的作业仓库</div><div class="line">- 把自己的仓库`下载`到本地</div><div class="line">组长将fork好的代码当到本地</div></pre></td></tr></table></figure></p>
-<p>git clone ‘地址’ 重命名文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; 不要改变已有的文件，防止冲突，只看不要改</div><div class="line"></div><div class="line">- 把自己的作业`上传`到自己的github仓库</div></pre></td></tr></table></figure></p>
-<p>git add<br>git commit<br>git push 推送到组长自己仓库中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- 发`pull request`给讲师</div><div class="line">- `添加`组员账号</div><div class="line">组长给组员添加权限</div><div class="line">`settings - collabrators  add collabrators` </div><div class="line">组员就会拥有组长权限，可以操作同一个仓库</div><div class="line">#### 第二次交作业流程(组员)</div><div class="line">- 克隆组长项目</div><div class="line">- 先拉取组长仓库最新代码</div><div class="line">- 将自己的作业（放入对应的文件夹）</div><div class="line">- `git add/git commit`</div><div class="line">- 再push前拉取组长仓库最新代码</div><div class="line">- push到组长仓库</div><div class="line">#### 第二次交作业流程(组长)</div><div class="line">- 在本地增加讲师为远程仓库</div></pre></td></tr></table></figure></p>
+<p>git fetch<br>git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- 解决冲突 </div><div class="line"></div><div class="line">去掉&gt;&gt;&gt;&gt;  ==== &lt;&lt;&lt;&lt; 保存剩余的再次提交即可</div></pre></td></tr></table></figure></p>
+<p>git pull  = get fetch + git merge<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 13.作业提交流程</div><div class="line"></div><div class="line">#### 第一次提交作业(组长)</div><div class="line">- `fork`讲师的作业仓库</div><div class="line">- 把自己的仓库`下载`到本地</div><div class="line">组长将fork好的代码当到本地</div></pre></td></tr></table></figure></p>
+<p>git clone ‘地址’ 重命名文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">不要改变已有的文件，防止冲突，只看不要改</div><div class="line"></div><div class="line">- 把自己的作业`上传`到自己的github仓库</div></pre></td></tr></table></figure></p>
+<p>git add<br>git commit<br>git push 推送到组长自己仓库中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- 发`pull request`给讲师</div><div class="line">- `添加`组员账号</div><div class="line">组长给组员添加权限</div><div class="line"></div><div class="line">`settings - collabrators  add collabrators` </div><div class="line">组员就会拥有组长权限，可以操作同一个仓库</div><div class="line">#### 第二次交作业流程(组员)</div><div class="line"></div><div class="line">- 克隆组长项目</div><div class="line">- 先拉取组长仓库最新代码</div><div class="line">- 将自己的作业（放入对应的文件夹）</div><div class="line">- `git add/git commit`</div><div class="line">- 再push前拉取组长仓库最新代码</div><div class="line">- push到组长仓库</div><div class="line"></div><div class="line">#### 第二次交作业流程(组长)</div><div class="line">- 在本地增加讲师为远程仓库</div></pre></td></tr></table></figure></p>
 <p>git remote add teacher “讲师的地址”<br>git pull teacher master<br>git push origin master<br>```</p>
 <ul>
 <li>拉取自己的最新代码</li>
@@ -206,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/git操作说明/" data-id="cis5mdz1m0000ykqs76vsrvej" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/git操作说明/" data-id="cis5mq8ay000034qskqmv60t2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cis5mdz2c0003ykqsj2jz8nl4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cis5mq8b7000234qsehqn3cpb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -483,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/markdown/" data-id="cis5mdz290002ykqsgu4awe1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/markdown/" data-id="cis5mq8bb000334qsn0xg2txv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -528,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hello-world/" data-id="cis5mdz1t0001ykqs6q2gmhgr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/hello-world/" data-id="cis5mq8b3000134qspa9j0at5" class="article-share-link">Share</a>
       
       
     </footer>
