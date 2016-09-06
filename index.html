@@ -61,6 +61,231 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/node/" class="article-date">
+  <time datetime="2016-09-06T15:32:41.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/node/">node</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-buffer"><a href="#1-buffer" class="headerlink" title="1.buffer"></a>1.buffer</h2><hr>
+<p>一个字节表示 0-255<br>buffer默认是16进制的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var buffer = new Buffer(&apos;中&apos;);</div><div class="line">&lt;Buffer e4 b8 ad&gt;</div></pre></td></tr></table></figure></p>
+<p>1.定义buffer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.1 通过长度定义buffer</div><div class="line">new Buffer(size);</div><div class="line">1.2 通过数组定义buffer</div><div class="line">new Buffer(array);</div><div class="line">正常情况下为0-255之间;</div><div class="line">1.3 字符串创建</div><div class="line">new Buffer(str,[encoding]);</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function toBase64 (str) &#123;</div><div class="line">    //先初始化字符数组 最终返回的结果是这些字符组成的</div><div class="line">    var chars=&apos;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&apos;.split(&apos;&apos;);</div><div class="line">    //通过字符串构建buffer</div><div class="line">    var buffer=new Buffer(str);</div><div class="line">    var str=&apos;&apos;;</div><div class="line">    for (var i=0;i&lt;buffer.length;i++) &#123;</div><div class="line">        //把buffer中的值转成二进制字符串 拼在一起</div><div class="line">        var a= buffer[i].toString(2);</div><div class="line">        str+=a;</div><div class="line">    &#125;</div><div class="line">    //中国 6个字节 48位  48/6=8</div><div class="line">    var result=&apos;&apos;;</div><div class="line">    str.replace(/\d&#123;6&#125;/g,function  (matched) &#123;</div><div class="line">        // matched是六位一组的字符子串</div><div class="line">        // parseInt负责把它们转成10进制数</div><div class="line">        // chars从字符数组按索引取出对应的字符 拼在一起</div><div class="line">        result+=chars[parseInt(matched,2)];//parseInt将任意进制字符串转换为十进制</div><div class="line">    &#125;)</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(toBase64(&apos;中国&apos;));</div></pre></td></tr></table></figure>
+<h2 id="2-小图标可以用base64"><a href="#2-小图标可以用base64" class="headerlink" title="2.小图标可以用base64"></a>2.小图标可以用base64</h2><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line">fs.readFile(&apos;./face.jpg&apos;,&apos;base64&apos;,function(err,data)&#123;</div><div class="line">    console.log(data);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">&lt;img src=&quot;data:image/jpg;base64,&quot; alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+<h2 id="3-stream-流"><a href="#3-stream-流" class="headerlink" title="3.stream 流"></a>3.stream 流</h2><hr>
+<p>流是一种数据传输手段<br>有起点和终点<br>流是EventEmitter的子类,可以发射和接收事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">创建可读流</div><div class="line">var rs = fs.createReadStream(path,[options]);</div></pre></td></tr></table></figure></p>
+<ul>
+<li>path读取文件的路径</li>
+<li>options<pre><code>flags打开文件要做的操作,默认为&apos;r&apos;
+encoding默认为null
+start开始读取的索引位置
+end结束读取的索引位置
+highWaterMark读取缓存区默认的大小64kb
+如果指定utf8编码highWaterMark要大于3个字节
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var rs = fs.createReadStream(&apos;./1.txt&apos;);</div><div class="line">监听data事件</div><div class="line">流切换到流动模式,数据会被尽可能快的读出</div><div class="line">rs.on(&apos;data&apos;,function(data)&#123;</div><div class="line">    console.log(&apos;data:&apos;,data.toString());</div><div class="line">&#125;)</div><div class="line">监听end事件</div><div class="line">该事件会在读完数据后被触发</div><div class="line">rs.on(&apos;end&apos;,function()&#123;</div><div class="line">    console.log(&apos;end&apos;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var ws = fs.createWriteStream(&apos;./write.txt&apos;);</div><div class="line">ws.write(&apos;a&apos;);//结束前可以多次写入</div><div class="line">ws.write(&apos;b&apos;);</div><div class="line">ws.end();*/</div><div class="line">//先创建可读流</div><div class="line">var rs = fs.createReadStream(&apos;./1.txt&apos;);</div><div class="line">//再创建可写流</div><div class="line">var out = fs.createWriteStream(&apos;./2.txt&apos;);</div><div class="line">//通过管道的方式让数据从可读流里流到可写流里</div><div class="line">rs.pipe(out);</div><div class="line">将数据的滞留量限制到一个可接受的水平，以使得不同速度的来源和目标不会淹没可用内存。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">pipe方法的原理 #</div><div class="line"></div><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line">var ws = fs.createWriteStream(&apos;./2.txt&apos;);</div><div class="line">var rs = fs.createReadStream(&apos;./1.txt&apos;);</div><div class="line">rs.on(&apos;data&apos;, function (data) &#123;</div><div class="line">    var flag = ws.write(data);</div><div class="line">    if(!flag)</div><div class="line">    rs.pause();</div><div class="line">&#125;);</div><div class="line">ws.on(&apos;drain&apos;, function () &#123;</div><div class="line">    rs.resume();</div><div class="line">&#125;);</div><div class="line">rs.on(&apos;end&apos;, function () &#123;</div><div class="line">    ws.end();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="4-event"><a href="#4-event" class="headerlink" title="4.event"></a>4.event</h2><ul>
+<li>on 注册监听 </li>
+<li>emit 发射事件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">//构造函数</div><div class="line">function EventEmitter()&#123;</div><div class="line">  this._events = &#123;&#125;;</div><div class="line">&#125;</div><div class="line">//注册监听</div><div class="line">EventEmitter.prototype.on = function(type,listener)&#123;</div><div class="line">    //取出在事件对象上对此事件类型的监听函数数组</div><div class="line">    var listeners = this._events[type];</div><div class="line">    if(listeners)&#123; //如果有值，意味着有人监听过了</div><div class="line">        //把此监听追加到数组里</div><div class="line">        listeners.push(listener);</div><div class="line">    &#125;else&#123;</div><div class="line">        //如果没有值 创建一个新的数组</div><div class="line">        this._events[type] = [listener];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//发射事件</div><div class="line">EventEmitter.prototype.emit = function(type)&#123;</div><div class="line">    var arg=Array.prototype.slice.call(arguments,1);</div><div class="line">    //先取出事件对象中对此事件的监听函数数组</div><div class="line">    var listeners = this._events[type];</div><div class="line">    //如果有值的话</div><div class="line">    if(listeners)&#123;</div><div class="line">        //循环迭代此数组并依次执行</div><div class="line">        for(var i=0;i&lt;listeners.length;i++)&#123;</div><div class="line">            listeners[i].apply(null,arg);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = EventEmitter;</div></pre></td></tr></table></figure>
+<h2 id="5-fs"><a href="#5-fs" class="headerlink" title="5.fs"></a>5.fs</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var fs= require(&apos;fs&apos;);</div><div class="line">/*fs.readFile(); 读取文件</div><div class="line">fs.writeFile(); 写文件</div><div class="line">fs.exists(); 判断文件是否存在</div><div class="line">fs.mkdir(); 创建文件夹</div><div class="line">*/</div><div class="line"></div><div class="line">var path  = require(&apos;path&apos;);</div><div class="line">//把多个路径机械得拼成一个路径</div><div class="line">console.log(path.join(__dirname,&apos;a&apos;,&apos;b&apos;));</div><div class="line">//从当前目录出发，拼取下面的a/b</div><div class="line">console.log(path.resolve(&apos;a&apos;,&apos;b&apos;));</div><div class="line">/*path.join();</div><div class="line">path.resolve();</div><div class="line">path.sep; window  linux mac 路径分隔符不一样</div></pre></td></tr></table></figure>
+<p>级联创建目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line">//同步创建 非常容易阅读 但是效率较低，而且会阻塞主线程</div><div class="line">function mkdir1(p)&#123;</div><div class="line">    //先对路径分隔符进行转换 /\都转成当前操作系统下面的路径分隔符</div><div class="line">    var p= p.replace(/[\/]/g,path.sep);</div><div class="line">    //按路径分隔符进行分隔</div><div class="line">    var pathname= p.split(path.sep);</div><div class="line">    // a/b/c</div><div class="line">    for(var i=0;i&lt; pathname.length;i++)&#123;</div><div class="line">        //截取每个子路径</div><div class="line">        var cpath=pathname.slice(0,i+1).join(path.sep);</div><div class="line">        //如果存在此路径，则返回，如果不存在，则创建</div><div class="line">        fs.existsSync(cpath)||fs.mkdirSync(cpath)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//异步正向</div><div class="line">function makep(dir)&#123;</div><div class="line">    //先对路径分隔符进行转换 /\都转成当前操作系统下面的路径分隔符</div><div class="line">    var dir= dir.replace(/[\/]/g,path.sep);</div><div class="line">    //按路径分隔符进行分隔 [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</div><div class="line">    var pathname= dir.split(path.sep);</div><div class="line">    var index = 1;</div><div class="line">    make();</div><div class="line">    function make()&#123;</div><div class="line">        if(index&gt;pathname.length)//如果index 大于数组长请表示创建完成</div><div class="line">            return;</div><div class="line">        //依次获取至上而下的子目录</div><div class="line">       var subDir = pathname.slice(0,index++).join(path.sep);</div><div class="line">        //判断此子目录是否存在</div><div class="line">       fs.exists(subDir,function(exists)&#123;</div><div class="line">            if(exists)&#123;//如果此目录存在，则直接执行下一次</div><div class="line">                make();</div><div class="line">            &#125;else&#123;//如果此目录不存在则创建此子目录，并在创建成功后调用make</div><div class="line">                fs.mkdir(subDir,make);</div><div class="line">            &#125;</div><div class="line">       &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">makep(path.join(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;,&apos;g&apos;));</div></pre></td></tr></table></figure>
+<h2 id="6-module"><a href="#6-module" class="headerlink" title="6.module"></a>6.module</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">模块的分类</div><div class="line">内置模块 require(&apos;fs url http path util&apos;);</div><div class="line">   速度最快，内置于node中</div><div class="line">文件模块 自己写的模块</div><div class="line">    通过路径来加载的 ./</div><div class="line">第三方模块 别人写的模块 require(&apos;mime&apos;);</div><div class="line"></div><div class="line">require(&apos;./6.fs.js&apos;);</div><div class="line">var mime = require(&apos;mime.js&apos;);</div><div class="line"></div><div class="line">1.npm install init -y 初始化一个package.json文件</div><div class="line">2.npm install 安装模块</div><div class="line">3.--save  会配置到package.json中</div><div class="line">npm install 后面不写模块名会从package.json中找模块名进行安装</div><div class="line">npm install --save 与 npm install --save-dev 的区别</div><div class="line">一个放在package.json 的dependencies , 一个放在devDependencies里面</div><div class="line">产品模式用dependencies，开发模式用devDep</div><div class="line">1. 看当前目录下面有没有node_modules，如果有在里面找，</div><div class="line">如果没有找父级</div><div class="line">2. 找一个名字叫 mime的文件夹</div><div class="line">3. 先找package.json里面的main配置项</div><div class="line">4. 如果没有main配置项会找index.js的文件</div></pre></td></tr></table></figure>
+<h2 id="7-express"><a href="#7-express" class="headerlink" title="7.express"></a>7.express</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express();</div><div class="line">app.set(&apos;view engine&apos;,&apos;ejs&apos;);</div><div class="line">app.set(&apos;views&apos;,__dirname);</div><div class="line"></div><div class="line">app.get(&apos;/&apos;,function(req,res)&#123;</div><div class="line">    // end里只能是字符串或Buffer</div><div class="line">    // send里可以是任意类型 对象 数组 数字</div><div class="line">    // send的原理是根据参数类型不同把不同类型的数据转成字符串，然后调用end方法</div><div class="line">    res.send(&#123;name:&apos;zfpx&apos;&#125;);</div><div class="line">&#125;);</div><div class="line">app.get(&apos;/books&apos;,function(req,res)&#123;</div><div class="line">   res.render(&apos;books&apos;,&#123;name:&apos;珠峰书店&apos;,books:[</div><div class="line">       &#123;id:1,name:&apos;nodejs&apos;&#125;,&#123;id:2,name:&apos;angular baby&apos;&#125;</div><div class="line">   ]&#125;);</div><div class="line">&#125;);</div><div class="line">app.listen(9090);</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/node/" data-id="cisrmz2rg0001ooqscmn62afe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字符串常用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/29/字符串常用方法/" class="article-date">
+  <time datetime="2016-08-29T09:54:21.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串常用方法"><a href="#字符串常用方法" class="headerlink" title="字符串常用方法"></a>字符串常用方法</h2><p>String：字符串类<br>一个字符串 是由多个字符组成的<br>str.length 获取字符串中的字符的个数(字符串的长度)<br>字符串也存在索引，也是从0开始的，空格、换行这些特殊的符号也是一个字符</p>
+<ul>
+<li>1.查找索引对应的字符<br>1.charAt(索引) 获取指定索引位置的字符<br>2.charCodeAt(索引) 获取指定索引位置的字符对应的ASCII值<br>ASCII值：每一个字母、汉字、特殊符号都有一个对应的码值(Unicode)</li>
+<li>2.字符串的截取<br>如果只写一个n，没有m：代表截取到末尾位置<br>1.substr(n,m) 从索引n开始截取m个字符<br>2.substring(n,m) 从索引n开始，找到索引m处(不包含m)，将找到的字符返回<br>3.slice(n,m) 和subtring用法一样，slice支持以负数作为索引，str.length+负数索引</li>
+<li>3.查找字符的索引<br>1.indexOf(字符)：获取指定字符串</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/29/字符串常用方法/" data-id="cisrmz2ru0006ooqsum7i81v9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/29/学习笔记/" class="article-date">
+  <time datetime="2016-08-29T03:47:04.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/29/学习笔记/">学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p>1.JS是用来干什么的？<br>  1）就是用来操作css的-UI效果<br>  2）ajax获取数据<br>2.JS主要分为三部分<br>  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等<br>  2）DOM：document object model 文档对象模型  操作DOM的<br>  3）BOM：browser object model 浏览器对象模型 操作window的<br>3.页面由三部分组成：<br>  1）HTML:超文本标记语言–搭框架-结构<br>  2）css：层叠样式表 –加样式-样式<br>  3）javascript：轻量级的脚本语言–实现功能–行为<br>  行为样式结构三者相分离<br>4.JS引入方式<br>    css引入方式：<br>      1.行内式<br>      2.内嵌式<br>      3.外链式<br>    JS引入方式<br>      1.行内式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;div1&quot; onclick=&quot;alert1&quot;&gt;&lt;/div&gt;</div><div class="line">```      </div><div class="line">  JS代码写在双引号里面；但是不建议使用行内式</div><div class="line">       2.内嵌式：</div><div class="line">       script可以放在页面的任何一个地方：一般放在body最后或者head里面；但是，放在以上两种中是由区别的</div><div class="line">       注意：如果放在head里面，必须加系统的onload:window.onload事件；</div><div class="line">       如果放在body后面，不需要给window.onload</div><div class="line">       3.外链式</div></pre></td></tr></table></figure></p>
+<p><script src="1.js"></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">项目开发中都用外链式</div><div class="line">注意：如果引入外链式的话，在两个script中一定不能在写代码，否则肯定不会执行</div><div class="line">5.事件</div><div class="line">鼠标事件：</div><div class="line">    onclick:点击事件</div><div class="line">    onmouseover:当鼠标移入的时候</div><div class="line">    onmouseout：当鼠标移除的时候</div><div class="line">键盘事件：</div><div class="line">系统事件：</div><div class="line">    window.onload:当页面加载完成的时候</div><div class="line">表单事件：</div><div class="line">6.JS输出方式：目的是为了测试</div><div class="line">1）alert：在浏览器中弹出需要的内容</div><div class="line">2）console.log():在控制台输出</div><div class="line">3）console.dir()：可以详细的打印出对象上对应的属性和方法</div><div class="line">4）console.table()：把对象一表格的形式打印出来</div><div class="line">5)document.write:可以吧要输出的内容直接打印在页面上</div><div class="line">6）innerHTML</div></pre></td></tr></table></figure></p>
+<p>obj.innerHTML=’打印在页面上’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">但是需要注意：在window.onload事件中，如果已经有了很多内容，这时候，输出document.write();会彻底的清空页面；所以不要在window.onload中写document.write</div><div class="line">7.控制页卡分析：</div><div class="line">element：调试页面的结构和样式，调好后，直接复制到我们的css样式中</div><div class="line">console：用来打印我们的输出日志的</div><div class="line">network：发送我们请求的所有文件</div><div class="line">8.JS获取元素的方式</div><div class="line">1）document.getElementById</div><div class="line">  文档    得到   元素  通过 id</div><div class="line">  在文档中通过id来获取元素</div><div class="line">2）context:上下文，起限制范围的作用</div><div class="line">9.JS的命名规范：</div><div class="line">匈牙利命名规范就是驼峰命名规范</div><div class="line">类型 前缀  类型   实例</div><div class="line">数组	a	Array	aItems</div><div class="line">布尔值	b	Boolean	bIsComplete</div><div class="line">浮点数	f	Float	fPrice</div><div class="line">函数	fn	Function	fnHandler</div><div class="line">整数	i	Integer	iItemCount</div><div class="line">对象	o	Object	oDiv1</div><div class="line">正则表达式	re	RegExp	reEmailCheck</div><div class="line">字符串	s	String	sUserName</div><div class="line">变体变量	v	Variant	vAnything</div><div class="line">10.对象有两部分组成：</div><div class="line">属性：元素身上固有的特征</div><div class="line">方法：能干什么事</div><div class="line">属性和方法的简单区别：属性没括号，方法有括号</div><div class="line">11.函数：</div><div class="line">1）定义</div><div class="line">2）调用</div><div class="line">函数包括：有名字的函数和匿名函数</div><div class="line">函数的方法：</div></pre></td></tr></table></figure></p>
+<p>function 函数名(){<br>    alert(123)<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">12.变量</div></pre></td></tr></table></figure></p>
+<p>var aa=xxx;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var 定义变量</div><div class="line">变量，就是物体的别称，见到变量就像见到物体本身一样；</div><div class="line">13.属性操作</div><div class="line">操作属性必须通过`.`或者`[&quot;&quot;]`</div><div class="line">`.`是 `的` 的意思</div></pre></td></tr></table></figure></p>
+<p>oDiv.style.visibility=’visible’<br><code>``
+oDiv的style属性上visibility赋值为&#39;visible&#39;</code>=<code>是赋值的意思
+14.JS中的数据类型
+    1）基本数据类型
+    2）引用数据类型
+    基本数据类型：字符串string；数字number；布尔boolean；null；undefined
+    引用数据类型：
+        对象数据类型：数组；object；new oDate;正则 /^2\d+/
+        函数数据类型：function(){}
+15.数据类型的检测
+    1）typeof
+     他是用来检测基本数据类型；
+     同通过typeof拿到的东西，都被字符串包裹着：外面是引号，里面才是我们真正的数据类型；&quot;string&quot;,&quot;number&quot;
+     type的局限性：他不能用来检测对象数据类型
+    2）obj.constructor:判断当前元素所属的函数类型，通过函数名就能看到这个元素是什么类型的对象；
+    function Array(){};
+    3)ary instanceof Array:判断ary是不是Array的一个具体的实例
+    4）Object.prototype.toString.call();</code>[object String]`<br>16.字符串：”string”<br>    1）用单引号或者双引号包裹的一到多个字符，都是字符串；2）习惯：一般情况，属性用双引号，字符串用单引号<br>    3）字符串和变量名的区别：字符串有引号，变量没有引号<br>    alert(va)–变量<br>    alert(‘va’)–字符串<br>    error:xx is not defined  这个变量没有被定义<br>    4）字符串的索引(下标)是从0开始；<br>    5）字符串长度通过length属性来拿到<br>    6）当字符串和数字进行相加的时候，”+”的作用是字符串拼接；数学运算中，除了’+’有字符串拼接的功能，其他的-,*,/都是正常的运算；<br>17.数字类型：0 正数 负数 小数 NaN<br>   1）如何把字符串转成数字数据类型<br>   严格转化：Number();<br>   NaN:not a number 不是一个数字；<br>   NaN跟任何值都不相等；包括他自己，也不相等；<br>   NaN出现的情况：<br>     1）转化失败的时候出现NaN<br>     2)不合法的运算，也会出现NaN<br>     isNaN()；检测是否为非有效数字；非有效数字-true<br>     有效数字-false<br>   非严格转化<br>     parseInt():只能进行整数的转化<br>     parseFloat():能进行小数的转化<br>18.boolean：true false<br> Boolean()<br> 规律：除了 0 NaN ‘’ null undefined 为false之外，其他的都为真true<br>19.null和undefined<br>区别：<br>1）null：现在没有，以后会有；<br>  undefined：现在没有，以后也不会有<br>2）隐式转化：<br>null：默认会转化为0；–typeof null-&gt;”object”<br>undefined:默认会转为NaN;–typeof<br>undefined-&gt;”undefined”<br>20.引用数据类型<br>1）对象数据类型 object new Date;<br> 1.对象的增删改查；<br>    1.增加、更改–看情况来处理<br>    obj.name=xx(当name属性不存在的时候，他是增加，否则，他是更改)<br>    2.删除<br>    obj.name=null;–假删除<br>    delete obj.name;–真删除<br>    3.查<br>    alert(obj.name)<br> 2.对象的不重名的特性<br> 3.对象的属性名如果为数字的话，会按照数字顺序pailie<br> 4.对象中的属性如果没有定义–undefined<br>变量如果没有定义–报错<br>2.函数数据类型</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/29/学习笔记/" data-id="cisrmz2s40009ooqs5azptxsh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数组常用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/28/数组常用方法/" class="article-date">
+  <time datetime="2016-08-28T11:53:07.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/28/数组常用方法/">数组常用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组的学习"><a href="#数组的学习" class="headerlink" title="数组的学习"></a>数组的学习</h2><p>学习数组我们按照四个维度来学习：<br>1.方法的作用<br>2.需要传哪些参数<br>3.是否有返回值，返回值是什么<br>4.通过此方法是否对原数组产生了改变</p>
+<h3 id="1-数组的增删改查"><a href="#1-数组的增删改查" class="headerlink" title="1.数组的增删改查"></a>1.数组的增删改查</h3><ul>
+<li>push<br>1.向数组末尾增加一项<br>2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值<br>3.返回值：新增加后数组的长度<br>4.原来的数组已经发生改变<br>扩展：不想使用push，也像向数组的末尾增加内容<code>ary[ary.length]=xx</code></li>
+<li>pop<br>1.删除数组最后一项的内容<br>2.参数：没有<br>3.返回：被删除的那一项的内容<br>4.原有的数组发生改变<br>扩展：<code>ary.length--;ary.length-=1;ary.length;ary.length--;ary.splice(ary.length-1)</code></li>
+<li>shift<br>1.删除数组中的第一项<br>2.参数：没有<br>3.返回：被删除哪一项的内容<br>4.原有的数组发生改变</li>
+<li>unshift<br>1.想数组的开头增加一项<br>2.参数：增加的内容<br>3.返回：新增后数组的长度<br>4.原有的数组发生改变</li>
+<li>splice<br>既能实现删除，也能实现增加，还能实现替换<br>删除：<br>1.<code>ary.splice(n,m)</code> 从索引n开始，删除m个元素，把删除的内容以一个新数组的方式返回，原来的数组改变<br>ary.splice(n)从索引n开始，删除到数组的末尾<br><code>ary.splice(0)</code>把之前的数组中每一项都删除掉(清空数组每一项)把之前的每一项的值以一个新的数组返回(把之前的数组克隆了一份一模一样的，这样克隆会修改原来的数组)<br><code>ary.splice()</code>数组中一项都没有删除，返回的是一个空数组<br>修改：<br><code>ary.splice(n,m,x)</code><br>从索引n开始，删除m个，用x替换删除的部分,把删除的内容以一个新的数组返回，原来的数组改变<br>增加：<br><code>ary.splice(n,0,x)</code><br>从索引n开始，一个都不删除(返回结果是一个空数组)，把x增加到索引n的前面，原来的数组改变<br>扩展：向末尾增加新内容<code>ary.splice(ary.length,0,x)</code><h2 id="2-关于数组的截取和拼接"><a href="#2-关于数组的截取和拼接" class="headerlink" title="2.关于数组的截取和拼接"></a>2.关于数组的截取和拼接</h2></li>
+<li>slice ：实现数组的截取，在原来的数组中截取某一部分<br>1.slice(n,m)从索引n开始，找到索引m处(不包含m)，将找到的部分以一个新的数组的返回，原来的数组不变<br>2.slice(n)从索引n开始一直找到数组末尾<br>3.slice()把原来的数组克隆一份一模一样的新数组返回</li>
+<li>concat：把两个数组拼接到一起，原来的数组不变<br>ary1.concat(ary2)把ary2和ary1进行拼接<br>ary1.concat() 把ary1克隆一份一模一样的数组<h2 id="3-把数组转化为字符串"><a href="#3-把数组转化为字符串" class="headerlink" title="3.把数组转化为字符串"></a>3.把数组转化为字符串</h2></li>
+<li>toString()把数组转化为字符串,原来的数组不变</li>
+<li>join()按照一个分隔符，把数组中的每一项拼接成一个字符串，原来的数组不变<br><code>ary.join(&#39;+&#39;)</code><br>扩展：eval：JS中把字符串变为JS表达式执行的一个方法<br>把数组的每一项进行相加求和<code>eval(ary.join(&#39;+&#39;))</code><h2 id="4-数组的排序和排列"><a href="#4-数组的排序和排列" class="headerlink" title="4.数组的排序和排列"></a>4.数组的排序和排列</h2></li>
+<li>reverse:把数组倒过来排列，原来的数组改变</li>
+<li>sort：给数组进行排序，原来数组发生改变<br>ary.sort()这样是能处理10以内的数字排列，因为他是按照Unicode编码的值进行排序的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ary.sort(function(a,b)&#123;</div><div class="line">    returm a-b //由小到大排序</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-只有在标准浏览器下兼容的，在IE6-8下不兼容"><a href="#5-只有在标准浏览器下兼容的，在IE6-8下不兼容" class="headerlink" title="5.只有在标准浏览器下兼容的，在IE6~8下不兼容"></a>5.只有在标准浏览器下兼容的，在IE6~8下不兼容</h2><ul>
+<li>indexOf/lastIndexOf(字符串中也有这两个方法，但是字符串的这两个方法兼容所有的浏览器，而数组的这两个方法是不兼容的)<br>当前内容在数组中第一次/最后一次出现位置的索引，如果数组中没有这一项，返回的结果是-1，如果有这一项，索引是几就返回几，原来的数组不变；<br>可以验证当前的内容在数组中是否存在</li>
+<li>forEach/map 都是用来遍历数组中的每一项的<br>forEach 数组中有几项就遍历几次，原来的数组不变<br>函数中的item：当前遍历的数组的这一项的值<br>index：当前的这一项的索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var ary=[23,12,13,45,25,34];</div><div class="line">ary.forEach(function(item,index)&#123;</div><div class="line">    console.log(item,index)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>map和forEach的语法是一样的，但是比forEach多加了一个把原来的内容进行替换的功能<br>原来的数组不变，返回的新数组可以改变</p>
+<h2 id="6-更多的数组方法"><a href="#6-更多的数组方法" class="headerlink" title="6.更多的数组方法"></a>6.更多的数组方法</h2><p>console.log(Array.prototype)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/28/数组常用方法/" data-id="cisrmz2rv0007ooqsyu5u5eul" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-前端开发面试问题及答案整理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/08/27/前端开发面试问题及答案整理/" class="article-date">
@@ -945,7 +1170,7 @@ function unsetCookie(name) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/27/前端开发面试问题及答案整理/" data-id="cisda8bot0005kwqsi740dy0h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/27/前端开发面试问题及答案整理/" data-id="cisrmz2ro0004ooqsiobsq0t5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -991,7 +1216,7 @@ function unsetCookie(name) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/26/bootstrap组件使用/" data-id="cisda8bp10006kwqsitiueqpw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/26/bootstrap组件使用/" data-id="cisrmz2rq0005ooqsugmd6z4v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1028,7 +1253,7 @@ function unsetCookie(name) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/常用网站整理/" data-id="cisda8bp20007kwqszrts6e0r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/常用网站整理/" data-id="cisrmz2sr000aooqsgf8y0dz2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1113,7 +1338,7 @@ function unsetCookie(name) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/npm操作/" data-id="cisda8boq0003kwqsly7apaef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/npm操作/" data-id="cisrmz2ss000booqsijf8wv8s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1250,7 +1475,7 @@ function unsetCookie(name) {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/git操作说明/" data-id="cisda8boh0000kwqsieotfyd1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/git操作说明/" data-id="cisrmz2rb0000ooqs550xa7kd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1359,242 +1584,7 @@ Global Options:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cisda8bop0002kwqsqju4ddzk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/markdown/" class="article-date">
-  <time datetime="2016-08-21T16:41:18.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/markdown/">markdown</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Cmd-Markdown-简明语法手册"><a href="#Cmd-Markdown-简明语法手册" class="headerlink" title="Cmd Markdown 简明语法手册"></a>Cmd Markdown 简明语法手册</h1><p>标签： Cmd-Markdown</p>
-<hr>
-<h3 id="1-斜体和粗体"><a href="#1-斜体和粗体" class="headerlink" title="1. 斜体和粗体"></a>1. 斜体和粗体</h3><p>使用 <em> 和 *</em> 表示斜体和粗体。</p>
-<p>示例：</p>
-<p>这是 <em>斜体</em>，这是 <strong>粗体</strong>。</p>
-<h3 id="2-分级标题"><a href="#2-分级标题" class="headerlink" title="2. 分级标题"></a>2. 分级标题</h3><p>使用 === 表示一级标题，使用 — 表示二级标题。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">这是一个一级标题</div><div class="line">============================</div><div class="line"></div><div class="line">这是一个二级标题</div><div class="line">--------------------------------------------------</div><div class="line"></div><div class="line">### 这是一个三级标题</div></pre></td></tr></table></figure>
-<p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。</p>
-<h3 id="3-外链接"><a href="#3-外链接" class="headerlink" title="3. 外链接"></a>3. 外链接</h3><p>使用 [描述](链接地址) 为文字增加外链接。</p>
-<p>示例：</p>
-<p>这是去往 <a href="https://shiwei-zhang.github.io/" target="_blank" rel="external">本人博客</a> 的链接。</p>
-<h3 id="4-无序列表"><a href="#4-无序列表" class="headerlink" title="4. 无序列表"></a>4. 无序列表</h3><p>使用 *，+，- 表示无序列表。</p>
-<p>示例：</p>
-<ul>
-<li>无序列表项 一</li>
-<li>无序列表项 二</li>
-<li>无序列表项 三</li>
-</ul>
-<h3 id="5-有序列表"><a href="#5-有序列表" class="headerlink" title="5. 有序列表"></a>5. 有序列表</h3><p>使用数字和点表示有序列表。</p>
-<p>示例：</p>
-<ol>
-<li>有序列表项 一</li>
-<li>有序列表项 二</li>
-<li>有序列表项 三</li>
-</ol>
-<h3 id="6-文字引用"><a href="#6-文字引用" class="headerlink" title="6. 文字引用"></a>6. 文字引用</h3><p>使用 &gt; 表示文字引用。</p>
-<p>示例：</p>
-<blockquote>
-<p>野火烧不尽，春风吹又生。</p>
-</blockquote>
-<h3 id="7-行内代码块"><a href="#7-行内代码块" class="headerlink" title="7. 行内代码块"></a>7. 行内代码块</h3><p>使用 `代码` 表示行内代码块。</p>
-<p>示例：</p>
-<p>让我们聊聊 <code>html</code>。</p>
-<h3 id="8-代码块"><a href="#8-代码块" class="headerlink" title="8.  代码块"></a>8.  代码块</h3><p>使用 四个缩进空格 表示代码块。</p>
-<p>示例：</p>
-<pre><code>这是一个代码块，此行左侧有四个不可见的空格。
-</code></pre><h3 id="9-插入图像"><a href="#9-插入图像" class="headerlink" title="9.  插入图像"></a>9.  插入图像</h3><p>使用 ![描述](图片链接地址) 插入图像。</p>
-<p>示例：</p>
-<p><img src="https://www.zybuluo.com/static/img/my_head.jpg" alt="我的头像"></p>
-<h1 id="Cmd-Markdown-高阶语法手册"><a href="#Cmd-Markdown-高阶语法手册" class="headerlink" title="Cmd Markdown 高阶语法手册"></a>Cmd Markdown 高阶语法手册</h1><h3 id="1-内容目录"><a href="#1-内容目录" class="headerlink" title="1. 内容目录"></a>1. 内容目录</h3><p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
-<p>[TOC]</p>
-<h3 id="2-标签分类"><a href="#2-标签分类" class="headerlink" title="2. 标签分类"></a>2. 标签分类</h3><p>在编辑区任意行的列首位置输入以下代码给文稿标签：</p>
-<p>标签： 数学 英语 Markdown</p>
-<p>或者</p>
-<p>Tags： 数学 英语 Markdown</p>
-<h3 id="3-删除线"><a href="#3-删除线" class="headerlink" title="3. 删除线"></a>3. 删除线</h3><p>使用 ~~ 表示删除线。</p>
-<p><del>这是一段错误的文本。</del></p>
-<h3 id="4-注脚"><a href="#4-注脚" class="headerlink" title="4. 注脚"></a>4. 注脚</h3><p>使用 [^keyword] 表示注脚。</p>
-<p>这是一个注脚[^footnote]的样例。</p>
-<p>这是第二个注脚[^footnote2]的样例。</p>
-<h3 id="5-LaTeX-公式"><a href="#5-LaTeX-公式" class="headerlink" title="5. LaTeX 公式"></a>5. LaTeX 公式</h3><p>$ 表示行内公式： </p>
-<p>质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。</p>
-<p>$$ 表示整行公式：</p>
-<p>$$\sum_{i=1}^n a_i=0$$</p>
-<p>$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</p>
-<p>$$\sum^{j-1}<em>{k=0}{\widehat{\gamma}</em>{kj} z_k}$$</p>
-<p>访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="external">MathJax</a> 参考更多使用方法。</p>
-<h3 id="6-加强的代码块"><a href="#6-加强的代码块" class="headerlink" title="6. 加强的代码块"></a>6. 加强的代码块</h3><p>支持四十一种编程语言的语法高亮的显示，行号显示。</p>
-<p>非代码示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install vim-gnome</div></pre></td></tr></table></figure>
-<p>Python 示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@requires_authorization</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">somefunc</span><span class="params">(param1=<span class="string">''</span>, param2=<span class="number">0</span>)</span>:</span></div><div class="line">    <span class="string">'''A docstring'''</span></div><div class="line">    <span class="keyword">if</span> param1 &gt; param2: <span class="comment"># interesting</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'Greater'</span></div><div class="line">    <span class="keyword">return</span> (param2 - param1 + <span class="number">1</span>) <span class="keyword">or</span> <span class="keyword">None</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>message = <span class="string">'''interpreter</span></div><div class="line"><span class="meta">... </span>prompt'''</div></pre></td></tr></table></figure>
-<p>JavaScript 示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* nth element in the fibonacci series.</div><div class="line">* @param n &gt;= 0</div><div class="line">* @return the nth element, &gt;= 0.</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fib</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">1</span>, b = <span class="number">1</span>;</div><div class="line">  <span class="keyword">var</span> tmp;</div><div class="line">  <span class="keyword">while</span> (--n &gt;= <span class="number">0</span>) &#123;</div><div class="line">    tmp = a;</div><div class="line">    a += b;</div><div class="line">    b = tmp;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.write(fib(<span class="number">10</span>));</div></pre></td></tr></table></figure>
-<h3 id="7-流程图"><a href="#7-流程图" class="headerlink" title="7. 流程图"></a>7. 流程图</h3><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">st=&gt;start: Start:&gt;https://www.zybuluo.com</div><div class="line">io=&gt;inputoutput: verification</div><div class="line">op=&gt;operation: Your Operation</div><div class="line">cond=&gt;condition: Yes or No?</div><div class="line">sub=&gt;subroutine: Your Subroutine</div><div class="line">e=&gt;end</div><div class="line"></div><div class="line">st-&gt;io-&gt;op-&gt;cond</div><div class="line">cond(yes)-&gt;e</div><div class="line">cond(no)-&gt;sub-&gt;io</div></pre></td></tr></table></figure>
-<h4 id="更多语法参考：流程图语法参考"><a href="#更多语法参考：流程图语法参考" class="headerlink" title="更多语法参考：流程图语法参考"></a>更多语法参考：<a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">流程图语法参考</a></h4><h3 id="8-序列图"><a href="#8-序列图" class="headerlink" title="8. 序列图"></a>8. 序列图</h3><h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Alice-&gt;Bob: Hello Bob, how are you?</div><div class="line">Note right of Bob: Bob thinks</div><div class="line">Bob--&gt;Alice: I am good thanks!</div></pre></td></tr></table></figure>
-<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例 2"></a>示例 2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Title: Here is a title</div><div class="line">A-&gt;B: Normal line</div><div class="line">B--&gt;C: Dashed line</div><div class="line">C-&gt;&gt;D: Open arrow</div><div class="line">D--&gt;&gt;A: Dashed open arrow</div></pre></td></tr></table></figure>
-<h4 id="更多语法参考：序列图语法参考"><a href="#更多语法参考：序列图语法参考" class="headerlink" title="更多语法参考：序列图语法参考"></a>更多语法参考：<a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">序列图语法参考</a></h4><h3 id="9-表格支持"><a href="#9-表格支持" class="headerlink" title="9. 表格支持"></a>9. 表格支持</h3><table>
-<thead>
-<tr>
-<th>项目</th>
-<th style="text-align:right">价格</th>
-<th style="text-align:center">数量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>计算机</td>
-<td style="text-align:right">\$1600</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td>手机</td>
-<td style="text-align:right">\$12</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td>管线</td>
-<td style="text-align:right">\$1</td>
-<td style="text-align:center">234</td>
-</tr>
-</tbody>
-</table>
-<h3 id="10-定义型列表"><a href="#10-定义型列表" class="headerlink" title="10. 定义型列表"></a>10. 定义型列表</h3><p>名词 1<br>:   定义 1（左侧有一个可见的冒号和四个不可见的空格）</p>
-<p>代码块 2<br>:   这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）</p>
-<pre><code>代码块（左侧有八个不可见的空格）
-</code></pre><h3 id="11-Html-标签"><a href="#11-Html-标签" class="headerlink" title="11. Html 标签"></a>11. Html 标签</h3><p>本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
-<pre><code>&lt;table&gt;
-    &lt;tr&gt;
-        &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
-        &lt;th&gt;星期一&lt;/th&gt;
-        &lt;th&gt;星期二&lt;/th&gt;
-        &lt;th&gt;星期三&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;李强&lt;/td&gt;
-        &lt;td&gt;张明&lt;/td&gt;
-        &lt;td&gt;王平&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre><table><br>    <tr><br>        <th rowspan="2">值班人员</th><br>        <th>星期一</th><br>        <th>星期二</th><br>        <th>星期三</th><br>    </tr><br>    <tr><br>        <td>李强</td><br>        <td>张明</td><br>        <td>王平</td><br>    </tr><br></table>
-
-<h3 id="12-内嵌图标"><a href="#12-内嵌图标" class="headerlink" title="12. 内嵌图标"></a>12. 内嵌图标</h3><p>本站的图标系统对外开放，在文档中输入</p>
-<pre><code>&lt;i class=&quot;icon-weibo&quot;&gt;&lt;/i&gt;
-</code></pre><p>即显示微博的图标： <i class="icon-weibo icon-2x"></i></p>
-<p>替换 上述 <code>i 标签</code> 内的 <code>icon-weibo</code> 以显示不同的图标，例如：</p>
-<pre><code>&lt;i class=&quot;icon-renren&quot;&gt;&lt;/i&gt;
-</code></pre><p>即显示人人的图标： <i class="icon-renren icon-2x"></i></p>
-<p>更多的图标和玩法可以参看 <a href="http://fortawesome.github.io/Font-Awesome/3.2.1/icons/" target="_blank" rel="external">font-awesome</a> 官方网站。</p>
-<h3 id="13-待办事宜-Todo-列表"><a href="#13-待办事宜-Todo-列表" class="headerlink" title="13. 待办事宜 Todo 列表"></a>13. 待办事宜 Todo 列表</h3><p>使用带有 [ ] 或 [x] （未完成或已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：</p>
-<pre><code>- [ ] **Cmd Markdown 开发**
-    - [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
-    - [ ] 支持以 PDF 格式导出文稿
-    - [x] 新增Todo列表功能 [语法参考](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments)
-    - [x] 改进 LaTex 功能
-        - [x] 修复 LaTex 公式渲染问题
-        - [x] 新增 LaTex 公式编号功能 [语法参考](http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers)
-- [ ] **七月旅行准备**
-    - [ ] 准备邮轮上需要携带的物品
-    - [ ] 浏览日本免税店的物品
-    - [x] 购买蓝宝石公主号七月一日的船票
-</code></pre><p>对应显示如下待办事宜 Todo 列表：</p>
-<ul>
-<li>[ ] <strong>Cmd Markdown 开发</strong><ul>
-<li>[ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
-<li>[ ] 支持以 PDF 格式导出文稿</li>
-<li>[x] 新增Todo列表功能 <a href="https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments" target="_blank" rel="external">语法参考</a></li>
-<li>[x] 改进 LaTex 功能<ul>
-<li>[x] 修复 LaTex 公式渲染问题</li>
-<li>[x] 新增 LaTex 公式编号功能 <a href="http://docs.mathjax.org/en/latest/tex.html#tex-eq-numbers" target="_blank" rel="external">语法参考</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>[ ] <strong>七月旅行准备</strong><ul>
-<li>[ ] 准备邮轮上需要携带的物品</li>
-<li>[ ] 浏览日本免税店的物品</li>
-<li>[x] 购买蓝宝石公主号七月一日的船票</li>
-</ul>
-</li>
-</ul>
-<p>[^footnote]: 这是一个 <em>注脚</em> 的 <strong>文本</strong>。</p>
-<p>[^footnote2]: 这是另一个 <em>注脚</em> 的 <strong>文本</strong>。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/markdown/" data-id="cisda8bom0001kwqsozwpex9l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/hello-world/" class="article-date">
-  <time datetime="2016-08-21T16:36:22.812Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hello-world/" data-id="cisda8bos0004kwqs7pndm5mf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cisrmz2rj0002ooqsyu20jecs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1605,6 +1595,10 @@ Global Options:
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -1621,7 +1615,7 @@ Global Options:
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -1634,23 +1628,23 @@ Global Options:
       <ul>
         
           <li>
+            <a href="/2016/09/06/node/">node</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/学习笔记/">学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/数组常用方法/">数组常用方法</a>
+          </li>
+        
+          <li>
             <a href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/26/bootstrap组件使用/">bootstrap组件使用</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/22/常用网站整理/">常用网站整理</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/22/npm操作/">npm操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/22/git操作说明/">git操作说明</a>
           </li>
         
       </ul>

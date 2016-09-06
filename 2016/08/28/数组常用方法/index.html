@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数组常用方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组的学习学习数组我们按照四个维度来学习：1.方法的作用2.需要传哪些参数3.是否有返回值，返回值是什么4.通过此方法是否对原数组产生了改变
+1.数组的增删改查
+push1.向数组末尾增加一项2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值3.返回值：新增加后数组的长度4.原来的数组已经发生改变扩展：不想使用push，也像向数组的末尾增加内容ary[ary.length]=xx
+pop1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组常用方法">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/数组常用方法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组的学习学习数组我们按照四个维度来学习：1.方法的作用2.需要传哪些参数3.是否有返回值，返回值是什么4.通过此方法是否对原数组产生了改变
+1.数组的增删改查
+push1.向数组末尾增加一项2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值3.返回值：新增加后数组的长度4.原来的数组已经发生改变扩展：不想使用push，也像向数组的末尾增加内容ary[ary.length]=xx
+pop1">
+<meta property="og:updated_time" content="2016-08-29T06:57:40.202Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组常用方法">
+<meta name="twitter:description" content="数组的学习学习数组我们按照四个维度来学习：1.方法的作用2.需要传哪些参数3.是否有返回值，返回值是什么4.通过此方法是否对原数组产生了改变
+1.数组的增删改查
+push1.向数组末尾增加一项2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值3.返回值：新增加后数组的长度4.原来的数组已经发生改变扩展：不想使用push，也像向数组的末尾增加内容ary[ary.length]=xx
+pop1">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数组常用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/28/数组常用方法/" class="article-date">
+  <time datetime="2016-08-28T11:53:07.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组常用方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组的学习"><a href="#数组的学习" class="headerlink" title="数组的学习"></a>数组的学习</h2><p>学习数组我们按照四个维度来学习：<br>1.方法的作用<br>2.需要传哪些参数<br>3.是否有返回值，返回值是什么<br>4.通过此方法是否对原数组产生了改变</p>
+<h3 id="1-数组的增删改查"><a href="#1-数组的增删改查" class="headerlink" title="1.数组的增删改查"></a>1.数组的增删改查</h3><ul>
+<li>push<br>1.向数组末尾增加一项<br>2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值<br>3.返回值：新增加后数组的长度<br>4.原来的数组已经发生改变<br>扩展：不想使用push，也像向数组的末尾增加内容<code>ary[ary.length]=xx</code></li>
+<li>pop<br>1.删除数组最后一项的内容<br>2.参数：没有<br>3.返回：被删除的那一项的内容<br>4.原有的数组发生改变<br>扩展：<code>ary.length--;ary.length-=1;ary.length;ary.length--;ary.splice(ary.length-1)</code></li>
+<li>shift<br>1.删除数组中的第一项<br>2.参数：没有<br>3.返回：被删除哪一项的内容<br>4.原有的数组发生改变</li>
+<li>unshift<br>1.想数组的开头增加一项<br>2.参数：增加的内容<br>3.返回：新增后数组的长度<br>4.原有的数组发生改变</li>
+<li>splice<br>既能实现删除，也能实现增加，还能实现替换<br>删除：<br>1.<code>ary.splice(n,m)</code> 从索引n开始，删除m个元素，把删除的内容以一个新数组的方式返回，原来的数组改变<br>ary.splice(n)从索引n开始，删除到数组的末尾<br><code>ary.splice(0)</code>把之前的数组中每一项都删除掉(清空数组每一项)把之前的每一项的值以一个新的数组返回(把之前的数组克隆了一份一模一样的，这样克隆会修改原来的数组)<br><code>ary.splice()</code>数组中一项都没有删除，返回的是一个空数组<br>修改：<br><code>ary.splice(n,m,x)</code><br>从索引n开始，删除m个，用x替换删除的部分,把删除的内容以一个新的数组返回，原来的数组改变<br>增加：<br><code>ary.splice(n,0,x)</code><br>从索引n开始，一个都不删除(返回结果是一个空数组)，把x增加到索引n的前面，原来的数组改变<br>扩展：向末尾增加新内容<code>ary.splice(ary.length,0,x)</code><h2 id="2-关于数组的截取和拼接"><a href="#2-关于数组的截取和拼接" class="headerlink" title="2.关于数组的截取和拼接"></a>2.关于数组的截取和拼接</h2></li>
+<li>slice ：实现数组的截取，在原来的数组中截取某一部分<br>1.slice(n,m)从索引n开始，找到索引m处(不包含m)，将找到的部分以一个新的数组的返回，原来的数组不变<br>2.slice(n)从索引n开始一直找到数组末尾<br>3.slice()把原来的数组克隆一份一模一样的新数组返回</li>
+<li>concat：把两个数组拼接到一起，原来的数组不变<br>ary1.concat(ary2)把ary2和ary1进行拼接<br>ary1.concat() 把ary1克隆一份一模一样的数组<h2 id="3-把数组转化为字符串"><a href="#3-把数组转化为字符串" class="headerlink" title="3.把数组转化为字符串"></a>3.把数组转化为字符串</h2></li>
+<li>toString()把数组转化为字符串,原来的数组不变</li>
+<li>join()按照一个分隔符，把数组中的每一项拼接成一个字符串，原来的数组不变<br><code>ary.join(&#39;+&#39;)</code><br>扩展：eval：JS中把字符串变为JS表达式执行的一个方法<br>把数组的每一项进行相加求和<code>eval(ary.join(&#39;+&#39;))</code><h2 id="4-数组的排序和排列"><a href="#4-数组的排序和排列" class="headerlink" title="4.数组的排序和排列"></a>4.数组的排序和排列</h2></li>
+<li>reverse:把数组倒过来排列，原来的数组改变</li>
+<li>sort：给数组进行排序，原来数组发生改变<br>ary.sort()这样是能处理10以内的数字排列，因为他是按照Unicode编码的值进行排序的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ary.sort(function(a,b)&#123;</div><div class="line">    returm a-b //由小到大排序</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-只有在标准浏览器下兼容的，在IE6-8下不兼容"><a href="#5-只有在标准浏览器下兼容的，在IE6-8下不兼容" class="headerlink" title="5.只有在标准浏览器下兼容的，在IE6~8下不兼容"></a>5.只有在标准浏览器下兼容的，在IE6~8下不兼容</h2><ul>
+<li>indexOf/lastIndexOf(字符串中也有这两个方法，但是字符串的这两个方法兼容所有的浏览器，而数组的这两个方法是不兼容的)<br>当前内容在数组中第一次/最后一次出现位置的索引，如果数组中没有这一项，返回的结果是-1，如果有这一项，索引是几就返回几，原来的数组不变；<br>可以验证当前的内容在数组中是否存在</li>
+<li>forEach/map 都是用来遍历数组中的每一项的<br>forEach 数组中有几项就遍历几次，原来的数组不变<br>函数中的item：当前遍历的数组的这一项的值<br>index：当前的这一项的索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var ary=[23,12,13,45,25,34];</div><div class="line">ary.forEach(function(item,index)&#123;</div><div class="line">    console.log(item,index)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>map和forEach的语法是一样的，但是比forEach多加了一个把原来的内容进行替换的功能<br>原来的数组不变，返回的新数组可以改变</p>
+<h2 id="6-更多的数组方法"><a href="#6-更多的数组方法" class="headerlink" title="6.更多的数组方法"></a>6.更多的数组方法</h2><p>console.log(Array.prototype)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/28/数组常用方法/" data-id="cisrmz2rv0007ooqsyu5u5eul" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/29/学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/27/前端开发面试问题及答案整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">前端开发面试问题及答案整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/06/node/">node</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/29/学习笔记/">学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/数组常用方法/">数组常用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
