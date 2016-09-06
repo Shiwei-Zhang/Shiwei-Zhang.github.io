@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>node | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.buffer
+    <title>node | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="1.buffer
 一个字节表示 0-255buffer默认是16进制的值12var buffer = new Buffer(&amp;apos;中&amp;apos;);&amp;lt;Buffer e4 b8 ad&amp;gt;
 1.定义buffer12345671.1 通过长度定义buffernew Buffer(size);1.2 通过数组定义buffernew Buffer(array);正常情况下为0-255之间;1">
 <meta property="og:type" content="article">
@@ -21,77 +27,86 @@
 <meta name="twitter:description" content="1.buffer
 一个字节表示 0-255buffer默认是16进制的值12var buffer = new Buffer(&amp;apos;中&amp;apos;);&amp;lt;Buffer e4 b8 ad&amp;gt;
 1.定义buffer12345671.1 通过长度定义buffernew Buffer(size);1.2 通过数组定义buffernew Buffer(array);正常情况下为0-255之间;1">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+  <body>
+    <header>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/06/node/" title="node" itemprop="url">node</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-06T15:32:41.000Z" itemprop="datePublished"> Published 2016-09-06</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/node/" class="article-date">
-  <time datetime="2016-09-06T15:32:41.000Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      node
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-buffer"><a href="#1-buffer" class="headerlink" title="1.buffer"></a>1.buffer</h2><hr>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-buffer"><span class="toc-number">1.</span> <span class="toc-text">1.buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-小图标可以用base64"><span class="toc-number">2.</span> <span class="toc-text">2.小图标可以用base64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-stream-流"><span class="toc-number">3.</span> <span class="toc-text">3.stream 流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-event"><span class="toc-number">4.</span> <span class="toc-text">4.event</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-fs"><span class="toc-number">5.</span> <span class="toc-text">5.fs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-module"><span class="toc-number">6.</span> <span class="toc-text">6.module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-express"><span class="toc-number">7.</span> <span class="toc-text">7.express</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="1-buffer"><a href="#1-buffer" class="headerlink" title="1.buffer"></a>1.buffer</h2><hr>
 <p>一个字节表示 0-255<br>buffer默认是16进制的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var buffer = new Buffer(&apos;中&apos;);</div><div class="line">&lt;Buffer e4 b8 ad&gt;</div></pre></td></tr></table></figure></p>
 <p>1.定义buffer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.1 通过长度定义buffer</div><div class="line">new Buffer(size);</div><div class="line">1.2 通过数组定义buffer</div><div class="line">new Buffer(array);</div><div class="line">正常情况下为0-255之间;</div><div class="line">1.3 字符串创建</div><div class="line">new Buffer(str,[encoding]);</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function toBase64 (str) &#123;</div><div class="line">    //先初始化字符数组 最终返回的结果是这些字符组成的</div><div class="line">    var chars=&apos;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&apos;.split(&apos;&apos;);</div><div class="line">    //通过字符串构建buffer</div><div class="line">    var buffer=new Buffer(str);</div><div class="line">    var str=&apos;&apos;;</div><div class="line">    for (var i=0;i&lt;buffer.length;i++) &#123;</div><div class="line">        //把buffer中的值转成二进制字符串 拼在一起</div><div class="line">        var a= buffer[i].toString(2);</div><div class="line">        str+=a;</div><div class="line">    &#125;</div><div class="line">    //中国 6个字节 48位  48/6=8</div><div class="line">    var result=&apos;&apos;;</div><div class="line">    str.replace(/\d&#123;6&#125;/g,function  (matched) &#123;</div><div class="line">        // matched是六位一组的字符子串</div><div class="line">        // parseInt负责把它们转成10进制数</div><div class="line">        // chars从字符数组按索引取出对应的字符 拼在一起</div><div class="line">        result+=chars[parseInt(matched,2)];//parseInt将任意进制字符串转换为十进制</div><div class="line">    &#125;)</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(toBase64(&apos;中国&apos;));</div></pre></td></tr></table></figure>
@@ -121,114 +136,334 @@ highWaterMark读取缓存区默认的大小64kb
 <p>级联创建目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var fs = require(&apos;fs&apos;);</div><div class="line">//同步创建 非常容易阅读 但是效率较低，而且会阻塞主线程</div><div class="line">function mkdir1(p)&#123;</div><div class="line">    //先对路径分隔符进行转换 /\都转成当前操作系统下面的路径分隔符</div><div class="line">    var p= p.replace(/[\/]/g,path.sep);</div><div class="line">    //按路径分隔符进行分隔</div><div class="line">    var pathname= p.split(path.sep);</div><div class="line">    // a/b/c</div><div class="line">    for(var i=0;i&lt; pathname.length;i++)&#123;</div><div class="line">        //截取每个子路径</div><div class="line">        var cpath=pathname.slice(0,i+1).join(path.sep);</div><div class="line">        //如果存在此路径，则返回，如果不存在，则创建</div><div class="line">        fs.existsSync(cpath)||fs.mkdirSync(cpath)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//异步正向</div><div class="line">function makep(dir)&#123;</div><div class="line">    //先对路径分隔符进行转换 /\都转成当前操作系统下面的路径分隔符</div><div class="line">    var dir= dir.replace(/[\/]/g,path.sep);</div><div class="line">    //按路径分隔符进行分隔 [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</div><div class="line">    var pathname= dir.split(path.sep);</div><div class="line">    var index = 1;</div><div class="line">    make();</div><div class="line">    function make()&#123;</div><div class="line">        if(index&gt;pathname.length)//如果index 大于数组长请表示创建完成</div><div class="line">            return;</div><div class="line">        //依次获取至上而下的子目录</div><div class="line">       var subDir = pathname.slice(0,index++).join(path.sep);</div><div class="line">        //判断此子目录是否存在</div><div class="line">       fs.exists(subDir,function(exists)&#123;</div><div class="line">            if(exists)&#123;//如果此目录存在，则直接执行下一次</div><div class="line">                make();</div><div class="line">            &#125;else&#123;//如果此目录不存在则创建此子目录，并在创建成功后调用make</div><div class="line">                fs.mkdir(subDir,make);</div><div class="line">            &#125;</div><div class="line">       &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">makep(path.join(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;,&apos;g&apos;));</div></pre></td></tr></table></figure>
 <h2 id="6-module"><a href="#6-module" class="headerlink" title="6.module"></a>6.module</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">模块的分类</div><div class="line">内置模块 require(&apos;fs url http path util&apos;);</div><div class="line">   速度最快，内置于node中</div><div class="line">文件模块 自己写的模块</div><div class="line">    通过路径来加载的 ./</div><div class="line">第三方模块 别人写的模块 require(&apos;mime&apos;);</div><div class="line"></div><div class="line">require(&apos;./6.fs.js&apos;);</div><div class="line">var mime = require(&apos;mime.js&apos;);</div><div class="line"></div><div class="line">1.npm install init -y 初始化一个package.json文件</div><div class="line">2.npm install 安装模块</div><div class="line">3.--save  会配置到package.json中</div><div class="line">npm install 后面不写模块名会从package.json中找模块名进行安装</div><div class="line">npm install --save 与 npm install --save-dev 的区别</div><div class="line">一个放在package.json 的dependencies , 一个放在devDependencies里面</div><div class="line">产品模式用dependencies，开发模式用devDep</div><div class="line">1. 看当前目录下面有没有node_modules，如果有在里面找，</div><div class="line">如果没有找父级</div><div class="line">2. 找一个名字叫 mime的文件夹</div><div class="line">3. 先找package.json里面的main配置项</div><div class="line">4. 如果没有main配置项会找index.js的文件</div></pre></td></tr></table></figure>
-<h2 id="7-express"><a href="#7-express" class="headerlink" title="7.express"></a>7.express</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express();</div><div class="line">app.set(&apos;view engine&apos;,&apos;ejs&apos;);</div><div class="line">app.set(&apos;views&apos;,__dirname);</div><div class="line"></div><div class="line">app.get(&apos;/&apos;,function(req,res)&#123;</div><div class="line">    // end里只能是字符串或Buffer</div><div class="line">    // send里可以是任意类型 对象 数组 数字</div><div class="line">    // send的原理是根据参数类型不同把不同类型的数据转成字符串，然后调用end方法</div><div class="line">    res.send(&#123;name:&apos;zfpx&apos;&#125;);</div><div class="line">&#125;);</div><div class="line">app.get(&apos;/books&apos;,function(req,res)&#123;</div><div class="line">   res.render(&apos;books&apos;,&#123;name:&apos;珠峰书店&apos;,books:[</div><div class="line">       &#123;id:1,name:&apos;nodejs&apos;&#125;,&#123;id:2,name:&apos;angular baby&apos;&#125;</div><div class="line">   ]&#125;);</div><div class="line">&#125;);</div><div class="line">app.listen(9090);</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/node/" data-id="cisrmz2rg0001ooqscmn62afe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2016/08/29/字符串常用方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">字符串常用方法</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
-    </div>
-  </div>
+<h2 id="7-express"><a href="#7-express" class="headerlink" title="7.express"></a>7.express</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express();</div><div class="line">app.set(&apos;view engine&apos;,&apos;ejs&apos;);</div><div class="line">app.set(&apos;views&apos;,__dirname);</div><div class="line"></div><div class="line">app.get(&apos;/&apos;,function(req,res)&#123;</div><div class="line">    // end里只能是字符串或Buffer</div><div class="line">    // send里可以是任意类型 对象 数组 数字</div><div class="line">    // send的原理是根据参数类型不同把不同类型的数据转成字符串，然后调用end方法</div><div class="line">    res.send(&#123;name:&apos;zfpx&apos;&#125;);</div><div class="line">&#125;);</div><div class="line">app.get(&apos;/books&apos;,function(req,res)&#123;</div><div class="line">   res.render(&apos;books&apos;,&#123;name:&apos;珠峰书店&apos;,books:[</div><div class="line">       &#123;id:1,name:&apos;nodejs&apos;&#125;,&#123;id:2,name:&apos;angular baby&apos;&#125;</div><div class="line">   ]&#125;);</div><div class="line">&#125;);</div><div class="line">app.listen(9090);</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/09/06/node/">node</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/学习笔记/">学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/28/数组常用方法/">数组常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/09/06/node/" data-title="node | Hexo" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/08/29/字符串常用方法/"  title="字符串常用方法">
+ <strong>下一篇：</strong><br/> 
+ <span>字符串常用方法
+</span>
+</a>
+</div>
+
 </nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	
 
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-buffer"><span class="toc-number">1.</span> <span class="toc-text">1.buffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-小图标可以用base64"><span class="toc-number">2.</span> <span class="toc-text">2.小图标可以用base64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-stream-流"><span class="toc-number">3.</span> <span class="toc-text">3.stream 流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-event"><span class="toc-number">4.</span> <span class="toc-text">4.event</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-fs"><span class="toc-number">5.</span> <span class="toc-text">5.fs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-module"><span class="toc-number">6.</span> <span class="toc-text">6.module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-express"><span class="toc-number">7.</span> <span class="toc-text">7.express</span></a></li></ol>
+ 
   </div>
-</body>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2715086553" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
 </html>

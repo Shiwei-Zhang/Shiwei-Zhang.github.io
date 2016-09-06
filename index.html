@@ -1,88 +1,96 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+    <title>Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+  <body>
+    <header>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/06/node/" class="article-date">
-  <time datetime="2016-09-06T15:32:41.000Z" itemprop="datePublished">2016-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/06/node/">node</a>
-    </h1>
-  
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
 
-      </header>
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/06/node/" title="node" itemprop="url">node</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-06T15:32:41.000Z" itemprop="datePublished"> Published 2016-09-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="1-buffer"><a href="#1-buffer" class="headerlink" title="1.buffer"></a>1.buffer</h2><hr>
 <p>一个字节表示 0-255<br>buffer默认是16进制的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var buffer = new Buffer(&apos;中&apos;);</div><div class="line">&lt;Buffer e4 b8 ad&gt;</div></pre></td></tr></table></figure></p>
 <p>1.定义buffer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.1 通过长度定义buffer</div><div class="line">new Buffer(size);</div><div class="line">1.2 通过数组定义buffer</div><div class="line">new Buffer(array);</div><div class="line">正常情况下为0-255之间;</div><div class="line">1.3 字符串创建</div><div class="line">new Buffer(str,[encoding]);</div></pre></td></tr></table></figure></p>
@@ -114,41 +122,54 @@ highWaterMark读取缓存区默认的大小64kb
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">//异步正向</div><div class="line">function makep(dir)&#123;</div><div class="line">    //先对路径分隔符进行转换 /\都转成当前操作系统下面的路径分隔符</div><div class="line">    var dir= dir.replace(/[\/]/g,path.sep);</div><div class="line">    //按路径分隔符进行分隔 [&apos;a&apos;,&apos;b&apos;,&apos;c&apos;]</div><div class="line">    var pathname= dir.split(path.sep);</div><div class="line">    var index = 1;</div><div class="line">    make();</div><div class="line">    function make()&#123;</div><div class="line">        if(index&gt;pathname.length)//如果index 大于数组长请表示创建完成</div><div class="line">            return;</div><div class="line">        //依次获取至上而下的子目录</div><div class="line">       var subDir = pathname.slice(0,index++).join(path.sep);</div><div class="line">        //判断此子目录是否存在</div><div class="line">       fs.exists(subDir,function(exists)&#123;</div><div class="line">            if(exists)&#123;//如果此目录存在，则直接执行下一次</div><div class="line">                make();</div><div class="line">            &#125;else&#123;//如果此目录不存在则创建此子目录，并在创建成功后调用make</div><div class="line">                fs.mkdir(subDir,make);</div><div class="line">            &#125;</div><div class="line">       &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">makep(path.join(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;,&apos;f&apos;,&apos;g&apos;));</div></pre></td></tr></table></figure>
 <h2 id="6-module"><a href="#6-module" class="headerlink" title="6.module"></a>6.module</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">模块的分类</div><div class="line">内置模块 require(&apos;fs url http path util&apos;);</div><div class="line">   速度最快，内置于node中</div><div class="line">文件模块 自己写的模块</div><div class="line">    通过路径来加载的 ./</div><div class="line">第三方模块 别人写的模块 require(&apos;mime&apos;);</div><div class="line"></div><div class="line">require(&apos;./6.fs.js&apos;);</div><div class="line">var mime = require(&apos;mime.js&apos;);</div><div class="line"></div><div class="line">1.npm install init -y 初始化一个package.json文件</div><div class="line">2.npm install 安装模块</div><div class="line">3.--save  会配置到package.json中</div><div class="line">npm install 后面不写模块名会从package.json中找模块名进行安装</div><div class="line">npm install --save 与 npm install --save-dev 的区别</div><div class="line">一个放在package.json 的dependencies , 一个放在devDependencies里面</div><div class="line">产品模式用dependencies，开发模式用devDep</div><div class="line">1. 看当前目录下面有没有node_modules，如果有在里面找，</div><div class="line">如果没有找父级</div><div class="line">2. 找一个名字叫 mime的文件夹</div><div class="line">3. 先找package.json里面的main配置项</div><div class="line">4. 如果没有main配置项会找index.js的文件</div></pre></td></tr></table></figure>
 <h2 id="7-express"><a href="#7-express" class="headerlink" title="7.express"></a>7.express</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express();</div><div class="line">app.set(&apos;view engine&apos;,&apos;ejs&apos;);</div><div class="line">app.set(&apos;views&apos;,__dirname);</div><div class="line"></div><div class="line">app.get(&apos;/&apos;,function(req,res)&#123;</div><div class="line">    // end里只能是字符串或Buffer</div><div class="line">    // send里可以是任意类型 对象 数组 数字</div><div class="line">    // send的原理是根据参数类型不同把不同类型的数据转成字符串，然后调用end方法</div><div class="line">    res.send(&#123;name:&apos;zfpx&apos;&#125;);</div><div class="line">&#125;);</div><div class="line">app.get(&apos;/books&apos;,function(req,res)&#123;</div><div class="line">   res.render(&apos;books&apos;,&#123;name:&apos;珠峰书店&apos;,books:[</div><div class="line">       &#123;id:1,name:&apos;nodejs&apos;&#125;,&#123;id:2,name:&apos;angular baby&apos;&#125;</div><div class="line">   ]&#125;);</div><div class="line">&#125;);</div><div class="line">app.listen(9090);</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/06/node/" data-id="cisrmz2rg0001ooqscmn62afe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-字符串常用方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/29/字符串常用方法/" class="article-date">
-  <time datetime="2016-08-29T09:54:21.000Z" itemprop="datePublished">2016-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/29/字符串常用方法/" title="字符串常用方法" itemprop="url">字符串常用方法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-29T09:54:21.000Z" itemprop="datePublished"> Published 2016-08-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="字符串常用方法"><a href="#字符串常用方法" class="headerlink" title="字符串常用方法"></a>字符串常用方法</h2><p>String：字符串类<br>一个字符串 是由多个字符组成的<br>str.length 获取字符串中的字符的个数(字符串的长度)<br>字符串也存在索引，也是从0开始的，空格、换行这些特殊的符号也是一个字符</p>
 <ul>
 <li>1.查找索引对应的字符<br>1.charAt(索引) 获取指定索引位置的字符<br>2.charCodeAt(索引) 获取指定索引位置的字符对应的ASCII值<br>ASCII值：每一个字母、汉字、特殊符号都有一个对应的码值(Unicode)</li>
@@ -156,41 +177,54 @@ highWaterMark读取缓存区默认的大小64kb
 <li>3.查找字符的索引<br>1.indexOf(字符)：获取指定字符串</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/字符串常用方法/" data-id="cisrmz2ru0006ooqsum7i81v9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/29/学习笔记/" class="article-date">
-  <time datetime="2016-08-29T03:47:04.000Z" itemprop="datePublished">2016-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/29/学习笔记/">学习笔记</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/29/学习笔记/" title="学习笔记" itemprop="url">学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-29T03:47:04.000Z" itemprop="datePublished"> Published 2016-08-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p>1.JS是用来干什么的？<br>  1）就是用来操作css的-UI效果<br>  2）ajax获取数据<br>2.JS主要分为三部分<br>  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等<br>  2）DOM：document object model 文档对象模型  操作DOM的<br>  3）BOM：browser object model 浏览器对象模型 操作window的<br>3.页面由三部分组成：<br>  1）HTML:超文本标记语言–搭框架-结构<br>  2）css：层叠样式表 –加样式-样式<br>  3）javascript：轻量级的脚本语言–实现功能–行为<br>  行为样式结构三者相分离<br>4.JS引入方式<br>    css引入方式：<br>      1.行内式<br>      2.内嵌式<br>      3.外链式<br>    JS引入方式<br>      1.行内式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;div1&quot; onclick=&quot;alert1&quot;&gt;&lt;/div&gt;</div><div class="line">```      </div><div class="line">  JS代码写在双引号里面；但是不建议使用行内式</div><div class="line">       2.内嵌式：</div><div class="line">       script可以放在页面的任何一个地方：一般放在body最后或者head里面；但是，放在以上两种中是由区别的</div><div class="line">       注意：如果放在head里面，必须加系统的onload:window.onload事件；</div><div class="line">       如果放在body后面，不需要给window.onload</div><div class="line">       3.外链式</div></pre></td></tr></table></figure></p>
 <p><script src="1.js"></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">项目开发中都用外链式</div><div class="line">注意：如果引入外链式的话，在两个script中一定不能在写代码，否则肯定不会执行</div><div class="line">5.事件</div><div class="line">鼠标事件：</div><div class="line">    onclick:点击事件</div><div class="line">    onmouseover:当鼠标移入的时候</div><div class="line">    onmouseout：当鼠标移除的时候</div><div class="line">键盘事件：</div><div class="line">系统事件：</div><div class="line">    window.onload:当页面加载完成的时候</div><div class="line">表单事件：</div><div class="line">6.JS输出方式：目的是为了测试</div><div class="line">1）alert：在浏览器中弹出需要的内容</div><div class="line">2）console.log():在控制台输出</div><div class="line">3）console.dir()：可以详细的打印出对象上对应的属性和方法</div><div class="line">4）console.table()：把对象一表格的形式打印出来</div><div class="line">5)document.write:可以吧要输出的内容直接打印在页面上</div><div class="line">6）innerHTML</div></pre></td></tr></table></figure></p>
 <p>obj.innerHTML=’打印在页面上’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">但是需要注意：在window.onload事件中，如果已经有了很多内容，这时候，输出document.write();会彻底的清空页面；所以不要在window.onload中写document.write</div><div class="line">7.控制页卡分析：</div><div class="line">element：调试页面的结构和样式，调好后，直接复制到我们的css样式中</div><div class="line">console：用来打印我们的输出日志的</div><div class="line">network：发送我们请求的所有文件</div><div class="line">8.JS获取元素的方式</div><div class="line">1）document.getElementById</div><div class="line">  文档    得到   元素  通过 id</div><div class="line">  在文档中通过id来获取元素</div><div class="line">2）context:上下文，起限制范围的作用</div><div class="line">9.JS的命名规范：</div><div class="line">匈牙利命名规范就是驼峰命名规范</div><div class="line">类型 前缀  类型   实例</div><div class="line">数组	a	Array	aItems</div><div class="line">布尔值	b	Boolean	bIsComplete</div><div class="line">浮点数	f	Float	fPrice</div><div class="line">函数	fn	Function	fnHandler</div><div class="line">整数	i	Integer	iItemCount</div><div class="line">对象	o	Object	oDiv1</div><div class="line">正则表达式	re	RegExp	reEmailCheck</div><div class="line">字符串	s	String	sUserName</div><div class="line">变体变量	v	Variant	vAnything</div><div class="line">10.对象有两部分组成：</div><div class="line">属性：元素身上固有的特征</div><div class="line">方法：能干什么事</div><div class="line">属性和方法的简单区别：属性没括号，方法有括号</div><div class="line">11.函数：</div><div class="line">1）定义</div><div class="line">2）调用</div><div class="line">函数包括：有名字的函数和匿名函数</div><div class="line">函数的方法：</div></pre></td></tr></table></figure></p>
@@ -215,41 +249,54 @@ oDiv的style属性上visibility赋值为&#39;visible&#39;</code>=<code>是赋值
     3)ary instanceof Array:判断ary是不是Array的一个具体的实例
     4）Object.prototype.toString.call();</code>[object String]`<br>16.字符串：”string”<br>    1）用单引号或者双引号包裹的一到多个字符，都是字符串；2）习惯：一般情况，属性用双引号，字符串用单引号<br>    3）字符串和变量名的区别：字符串有引号，变量没有引号<br>    alert(va)–变量<br>    alert(‘va’)–字符串<br>    error:xx is not defined  这个变量没有被定义<br>    4）字符串的索引(下标)是从0开始；<br>    5）字符串长度通过length属性来拿到<br>    6）当字符串和数字进行相加的时候，”+”的作用是字符串拼接；数学运算中，除了’+’有字符串拼接的功能，其他的-,*,/都是正常的运算；<br>17.数字类型：0 正数 负数 小数 NaN<br>   1）如何把字符串转成数字数据类型<br>   严格转化：Number();<br>   NaN:not a number 不是一个数字；<br>   NaN跟任何值都不相等；包括他自己，也不相等；<br>   NaN出现的情况：<br>     1）转化失败的时候出现NaN<br>     2)不合法的运算，也会出现NaN<br>     isNaN()；检测是否为非有效数字；非有效数字-true<br>     有效数字-false<br>   非严格转化<br>     parseInt():只能进行整数的转化<br>     parseFloat():能进行小数的转化<br>18.boolean：true false<br> Boolean()<br> 规律：除了 0 NaN ‘’ null undefined 为false之外，其他的都为真true<br>19.null和undefined<br>区别：<br>1）null：现在没有，以后会有；<br>  undefined：现在没有，以后也不会有<br>2）隐式转化：<br>null：默认会转化为0；–typeof null-&gt;”object”<br>undefined:默认会转为NaN;–typeof<br>undefined-&gt;”undefined”<br>20.引用数据类型<br>1）对象数据类型 object new Date;<br> 1.对象的增删改查；<br>    1.增加、更改–看情况来处理<br>    obj.name=xx(当name属性不存在的时候，他是增加，否则，他是更改)<br>    2.删除<br>    obj.name=null;–假删除<br>    delete obj.name;–真删除<br>    3.查<br>    alert(obj.name)<br> 2.对象的不重名的特性<br> 3.对象的属性名如果为数字的话，会按照数字顺序pailie<br> 4.对象中的属性如果没有定义–undefined<br>变量如果没有定义–报错<br>2.函数数据类型</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/学习笔记/" data-id="cisrmz2s40009ooqs5azptxsh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数组常用方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/28/数组常用方法/" class="article-date">
-  <time datetime="2016-08-28T11:53:07.000Z" itemprop="datePublished">2016-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/28/数组常用方法/">数组常用方法</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/28/数组常用方法/" title="数组常用方法" itemprop="url">数组常用方法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-28T11:53:07.000Z" itemprop="datePublished"> Published 2016-08-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="数组的学习"><a href="#数组的学习" class="headerlink" title="数组的学习"></a>数组的学习</h2><p>学习数组我们按照四个维度来学习：<br>1.方法的作用<br>2.需要传哪些参数<br>3.是否有返回值，返回值是什么<br>4.通过此方法是否对原数组产生了改变</p>
 <h3 id="1-数组的增删改查"><a href="#1-数组的增删改查" class="headerlink" title="1.数组的增删改查"></a>1.数组的增删改查</h3><ul>
 <li>push<br>1.向数组末尾增加一项<br>2.参数：想向末尾增加哪些内容就传谁，而且还可以传递多个值<br>3.返回值：新增加后数组的长度<br>4.原来的数组已经发生改变<br>扩展：不想使用push，也像向数组的末尾增加内容<code>ary[ary.length]=xx</code></li>
@@ -273,41 +320,54 @@ oDiv的style属性上visibility赋值为&#39;visible&#39;</code>=<code>是赋值
 <p>map和forEach的语法是一样的，但是比forEach多加了一个把原来的内容进行替换的功能<br>原来的数组不变，返回的新数组可以改变</p>
 <h2 id="6-更多的数组方法"><a href="#6-更多的数组方法" class="headerlink" title="6.更多的数组方法"></a>6.更多的数组方法</h2><p>console.log(Array.prototype)</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/28/数组常用方法/" data-id="cisrmz2rv0007ooqsyu5u5eul" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-前端开发面试问题及答案整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/27/前端开发面试问题及答案整理/" class="article-date">
-  <time datetime="2016-08-27T14:10:25.000Z" itemprop="datePublished">2016-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/27/前端开发面试问题及答案整理/" title="前端开发面试问题及答案整理" itemprop="url">前端开发面试问题及答案整理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-27T14:10:25.000Z" itemprop="datePublished"> Published 2016-08-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="前端开发面试知识点大纲："><a href="#前端开发面试知识点大纲：" class="headerlink" title="前端开发面试知识点大纲："></a>前端开发面试知识点大纲：</h2><pre><code>HTML&amp;CSS：  对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级及使用、HTML5、CSS3、移动端适应。
 
 JavaScript：   数据类型、面向对象、继承、闭包、插件、作用域、跨域、原型链、模块化、自定义事件、内存泄漏、事件机制、异步装载回调、模板引擎、Nodejs、JSON、ajax等。
@@ -1167,41 +1227,54 @@ function unsetCookie(name) {
     document.cookie = name + &quot;= ; expires=&quot; + new Date(0);
 }
 </code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/27/前端开发面试问题及答案整理/" data-id="cisrmz2ro0004ooqsiobsq0t5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bootstrap组件使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/26/bootstrap组件使用/" class="article-date">
-  <time datetime="2016-08-26T08:10:03.000Z" itemprop="datePublished">2016-08-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/26/bootstrap组件使用/">bootstrap组件使用</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/26/bootstrap组件使用/" title="bootstrap组件使用" itemprop="url">bootstrap组件使用</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-26T08:10:03.000Z" itemprop="datePublished"> Published 2016-08-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="bootstrap组件使用"><a href="#bootstrap组件使用" class="headerlink" title="bootstrap组件使用"></a>bootstrap组件使用</h2><p><a href="http://v3.bootcss.com/components/" target="_blank" rel="external">bootstrap组件</a><br>注意：bootstrap版本太高，图标不能正常显示</p>
 <ul>
 <li>引入外部样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=&quot;//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;</div></pre></td></tr></table></figure>
@@ -1213,78 +1286,104 @@ function unsetCookie(name) {
 </li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/26/bootstrap组件使用/" data-id="cisrmz2rq0005ooqsugmd6z4v" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-常用网站整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/常用网站整理/" class="article-date">
-  <time datetime="2016-08-22T09:07:01.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/常用网站整理/">常用网站整理</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/22/常用网站整理/" title="常用网站整理" itemprop="url">常用网站整理</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-22T09:07:01.000Z" itemprop="datePublished"> Published 2016-08-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p><a href="http://tool.css-js.com/" target="_blank" rel="external">CSS, JavaScript 压缩, 美化, 加密, 解密</a><br><a href="http://www.lesscss.net/functions" target="_blank" rel="external">less常用方法</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/mobileDevelopment/2016-07-22/527.html" target="_blank" rel="external">LESS文章1</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/mobileDevelopment/2016-07-22/528.html" target="_blank" rel="external">LESS文章2</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/mobileDevelopment/2016-07-15/511.html" target="_blank" rel="external">Hybird</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/mobileDevelopment/2016-06-29/457.html" target="_blank" rel="external">Meta1</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/mobileDevelopment/2016-07-02/480.html" target="_blank" rel="external">Meta2</a><br><a href="http://jquery.cuishifeng.cn/" target="_blank" rel="external">jQuery API</a><br><a href="http://www.colorzilla.com/gradient-editor/" target="_blank" rel="external">渐变工具、调色卡</a><br><a href="http://daneden.github.io/animate.css/" target="_blank" rel="external">animation效果</a><br><a href="http://cubic-bezier.com/" target="_blank" rel="external">赛贝尔曲线</a><br><a href="http://developer.baidu.com/wiki/index.php?title=docs/cplat/libs" target="_blank" rel="external">百度CDN公共库</a><br><a href="http://www.nowcoder.com/" target="_blank" rel="external">牛客网–面试题</a><br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137628548491051ccfaef0ccb470894c858999603fedf000" target="_blank" rel="external">github的使用方法</a><br><a href="http://caibaojian.com/" target="_blank" rel="external">前端开发博客</a><br><a href="http://web.jobbole.com/83425/" target="_blank" rel="external">js数组去重</a><br><a href="http://web.jobbole.com/" target="_blank" rel="external">伯乐在线</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1648" target="_blank" rel="external">原型和原型链</a><br><a href="http://jsbin.com/yuxame/4/edit" target="_blank" rel="external">代码在线编译</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">flex布局语法篇</a><br><a href="http://www.biaonimeia.com/" target="_blank" rel="external">自动化标注–标你妹</a><br><a href="http://cli.im/" target="_blank" rel="external">草料二维码</a><br><a href="http://cdn.code.baidu.com/" target="_blank" rel="external">百度静态资源公共库</a><br><a href="http://old.zhufengpeixun.cn/jishuziliao/javaScriptzhuanti/2016-07-31/542.html" target="_blank" rel="external">使用EJS(模板引擎)动态绑定页面中的数据</a><br><a href="http://www.eqxiu.com/" target="_blank" rel="external">易企秀</a><br><a href="http://www.embeddedjs.com/" target="_blank" rel="external">EJS模板引擎</a><br><a href="http://touch.code.baidu.com/" target="_blank" rel="external">移动端touch事件库</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2016-07-02/481.html" target="_blank" rel="external">正则实战应用技巧：格式化时间字符串</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2016-07-02/482.html" target="_blank" rel="external">正则实战应用技巧：获取URL地址栏的参数</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2016-07-09/500.html" target="_blank" rel="external">一些你不知道的JavaScript Console调试命令</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/javaScriptzhuanti/2016-07-31/542.html" target="_blank" rel="external">使用EJS(模板引擎)动态绑定页面中的数据</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-08-14/581.html" target="_blank" rel="external">移动端横竖屏的检测</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-07-22/527.html" target="_blank" rel="external">LESS学习:了解LESS和编译LESS</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-07-22/528.html" target="_blank" rel="external">LESS学习:LESS的基础语法</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-07-15/511.html" target="_blank" rel="external">一篇文章，让你快速了解Hybrid App开发模式</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-07-15/510.html" target="_blank" rel="external">检测浏览器的类型(PC端还是移动端)</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-06-29/457.html" target="_blank" rel="external">移动端基础知识第一发：常用的META标签</a><br><a href="http://old.zhufengpeixun.cn/qianduanjishuziliao/mobileDevelopment/2016-07-02/480.html" target="_blank" rel="external">移动端基础知识第二发：常用的META标签(移动端)</a><br><a href="http://tool.css-js.com/base64.html" target="_blank" rel="external">JS压缩/css压缩图片转Base64颜色RGB与16进制转换</a><br><a href="http://www.swiper.com.cn/" target="_blank" rel="external">swiper</a><br><a href="http://v3.bootcss.com/" target="_blank" rel="external">Bootstrap</a><br><a href="http://v3.bootcss.com/components/" target="_blank" rel="external">bootstrap组件</a><br><a href="http://www.bootcdn.cn/bootstrap/" target="_blank" rel="external">bootstrap版本下载网站</a><br><a href="https://lanterncn.org/" target="_blank" rel="external">蓝灯</a><br><a href="http://nodeapi.ucdok.com/#/api/util.html" target="_blank" rel="external">nodejs API</a><br><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a><br><a href="https://docs.angularjs.org/api/" target="_blank" rel="external">angularJS API</a></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/常用网站整理/" data-id="cisrmz2sr000aooqsgf8y0dz2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-npm操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/npm操作/" class="article-date">
-  <time datetime="2016-08-22T06:31:49.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/npm操作/">npm操作</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/22/npm操作/" title="npm操作" itemprop="url">npm操作</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-22T06:31:49.000Z" itemprop="datePublished"> Published 2016-08-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="npm-node-package-manager"><a href="#npm-node-package-manager" class="headerlink" title="npm node package manager"></a>npm node package manager</h2><ul>
 <li>用来管理所有包的<br>我们想把所有依赖都用一个文件来描述出来,初始化一个描述文件</li>
 <li>创建package.json</li>
@@ -1335,41 +1434,54 @@ function unsetCookie(name) {
 <p>nrm use taobao<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 发布之前切回官方源</div></pre></td></tr></table></figure></p>
 <p>nrm use npm<br>```</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/npm操作/" data-id="cisrmz2ss000booqsijf8wv8s" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git操作说明" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/git操作说明/" class="article-date">
-  <time datetime="2016-08-22T04:46:00.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/git操作说明/">git操作说明</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/22/git操作说明/" title="git操作说明" itemprop="url">git操作说明</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-22T04:46:00.000Z" itemprop="datePublished"> Published 2016-08-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="1-git的安装"><a href="#1-git的安装" class="headerlink" title="1.git的安装"></a>1.git的安装</h2><ul>
 <li>windows下安装<br><a href="http://git-scm.com" target="_blank" rel="external">下载地址</a></li>
 <li>mac下安装<br><a href="http://brew.sh" target="_blank" rel="external">下载Homebrew</a><br>拷贝对应脚本到终端下安装HomeBrew<br>然后在终端执行 brew install git命令安装*git<br>安装xcode会默认下载git</li>
@@ -1472,41 +1584,54 @@ function unsetCookie(name) {
 <p>npm publish  npm unpublish<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- 包的查找只要父模块node_modules存在则可以引用到 </div><div class="line">module.paths</div><div class="line"></div><div class="line">## chdir可以进行改变目录</div></pre></td></tr></table></figure></p>
 <p>process.chdir(‘..’)<br>```</p>
 <h2 id="cmd-amd-commonjs"><a href="#cmd-amd-commonjs" class="headerlink" title="cmd  amd  commonjs  *"></a>cmd  amd  commonjs  *</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/git操作说明/" data-id="cisrmz2rb0000ooqs550xa7kd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/22/hexo搭建博客/" class="article-date">
-  <time datetime="2016-08-21T16:53:17.000Z" itemprop="datePublished">2016-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/hexo搭建博客/">hexo搭建博客</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/22/hexo搭建博客/" title="hexo搭建博客" itemprop="url">hexo搭建博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-21T16:53:17.000Z" itemprop="datePublished"> Published 2016-08-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <h2 id="Hexo搭建静态博客"><a href="#Hexo搭建静态博客" class="headerlink" title="Hexo搭建静态博客"></a>Hexo搭建静态博客</h2><p>Hexo 是一款基于 Node.js 的快速的、简单的博客框架，能够创建一个项目进行编辑后生成一套静态网页，比较适合个人博客搭建。因为 Hexo 生成的网页不依赖数据库和任何 Web 工具，所以可以把它放在 Github上，然后配置好域名以后进行访问。</p>
 <h3 id="1-安装前置条件"><a href="#1-安装前置条件" class="headerlink" title="1.安装前置条件"></a>1.安装前置条件</h3><p>安装 Hexo 相当简单。然而在安装前，您必须检查电脑中是否已安装下列应用程序：</p>
 <ul>
@@ -1581,108 +1706,246 @@ Global Options:
   --safe    Disable all plugins and scripts
   --silent  Hide output on console
 </code></pre>
-      
+        
+        
+        <p class="article-more-link">
+          
+       </p>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/22/hexo搭建博客/" data-id="cisrmz2rj0002ooqsyu20jecs" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
 
-  
+</div>
 
 
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/09/06/node/">node</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/学习笔记/">学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/28/数组常用方法/">数组常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+<div class="comments-count">
+	
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
     </div>
-    <nav id="mobile-nav">
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2715086553" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
 
-  </div>
-</body>
-</html>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

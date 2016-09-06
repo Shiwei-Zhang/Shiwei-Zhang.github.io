@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>学习笔记 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Day11.JS是用来干什么的？  1）就是用来操作css的-UI效果  2）ajax获取数据2.JS主要分为三部分  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等  2）DOM：document object model 文档对象模型  操作DOM的  3）BOM：browser object model 浏览器对象模型 操作window的3.页面由三部分组成：  1）H">
+    <title>学习笔记 | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="John Doe">
+    
+
+    
+    <meta name="description" content="Day11.JS是用来干什么的？  1）就是用来操作css的-UI效果  2）ajax获取数据2.JS主要分为三部分  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等  2）DOM：document object model 文档对象模型  操作DOM的  3）BOM：browser object model 浏览器对象模型 操作window的3.页面由三部分组成：  1）H">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/08/29/学习笔记/index.html">
@@ -15,77 +21,86 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记">
 <meta name="twitter:description" content="Day11.JS是用来干什么的？  1）就是用来操作css的-UI效果  2）ajax获取数据2.JS主要分为三部分  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等  2）DOM：document object model 文档对象模型  操作DOM的  3）BOM：browser object model 浏览器对象模型 操作window的3.页面由三部分组成：  1）H">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
 
+    
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+  <body>
+    <header>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Hexo" title="Hexo"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Hexo">Hexo</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/08/29/学习笔记/" title="学习笔记" itemprop="url">学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-08-29T03:47:04.000Z" itemprop="datePublished"> Published 2016-08-29</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/29/学习笔记/" class="article-date">
-  <time datetime="2016-08-29T03:47:04.000Z" itemprop="datePublished">2016-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      学习笔记
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p>1.JS是用来干什么的？<br>  1）就是用来操作css的-UI效果<br>  2）ajax获取数据<br>2.JS主要分为三部分<br>  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等<br>  2）DOM：document object model 文档对象模型  操作DOM的<br>  3）BOM：browser object model 浏览器对象模型 操作window的<br>3.页面由三部分组成：<br>  1）HTML:超文本标记语言–搭框架-结构<br>  2）css：层叠样式表 –加样式-样式<br>  3）javascript：轻量级的脚本语言–实现功能–行为<br>  行为样式结构三者相分离<br>4.JS引入方式<br>    css引入方式：<br>      1.行内式<br>      2.内嵌式<br>      3.外链式<br>    JS引入方式<br>      1.行内式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;div1&quot; onclick=&quot;alert1&quot;&gt;&lt;/div&gt;</div><div class="line">```      </div><div class="line">  JS代码写在双引号里面；但是不建议使用行内式</div><div class="line">       2.内嵌式：</div><div class="line">       script可以放在页面的任何一个地方：一般放在body最后或者head里面；但是，放在以上两种中是由区别的</div><div class="line">       注意：如果放在head里面，必须加系统的onload:window.onload事件；</div><div class="line">       如果放在body后面，不需要给window.onload</div><div class="line">       3.外链式</div></pre></td></tr></table></figure></p>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day1"><span class="toc-number">1.</span> <span class="toc-text">Day1</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p>1.JS是用来干什么的？<br>  1）就是用来操作css的-UI效果<br>  2）ajax获取数据<br>2.JS主要分为三部分<br>  1）ECMAScript：语法 变量 命名 循环 数据类型 判断等等<br>  2）DOM：document object model 文档对象模型  操作DOM的<br>  3）BOM：browser object model 浏览器对象模型 操作window的<br>3.页面由三部分组成：<br>  1）HTML:超文本标记语言–搭框架-结构<br>  2）css：层叠样式表 –加样式-样式<br>  3）javascript：轻量级的脚本语言–实现功能–行为<br>  行为样式结构三者相分离<br>4.JS引入方式<br>    css引入方式：<br>      1.行内式<br>      2.内嵌式<br>      3.外链式<br>    JS引入方式<br>      1.行内式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;div1&quot; onclick=&quot;alert1&quot;&gt;&lt;/div&gt;</div><div class="line">```      </div><div class="line">  JS代码写在双引号里面；但是不建议使用行内式</div><div class="line">       2.内嵌式：</div><div class="line">       script可以放在页面的任何一个地方：一般放在body最后或者head里面；但是，放在以上两种中是由区别的</div><div class="line">       注意：如果放在head里面，必须加系统的onload:window.onload事件；</div><div class="line">       如果放在body后面，不需要给window.onload</div><div class="line">       3.外链式</div></pre></td></tr></table></figure></p>
 <p><script src="1.js"></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">项目开发中都用外链式</div><div class="line">注意：如果引入外链式的话，在两个script中一定不能在写代码，否则肯定不会执行</div><div class="line">5.事件</div><div class="line">鼠标事件：</div><div class="line">    onclick:点击事件</div><div class="line">    onmouseover:当鼠标移入的时候</div><div class="line">    onmouseout：当鼠标移除的时候</div><div class="line">键盘事件：</div><div class="line">系统事件：</div><div class="line">    window.onload:当页面加载完成的时候</div><div class="line">表单事件：</div><div class="line">6.JS输出方式：目的是为了测试</div><div class="line">1）alert：在浏览器中弹出需要的内容</div><div class="line">2）console.log():在控制台输出</div><div class="line">3）console.dir()：可以详细的打印出对象上对应的属性和方法</div><div class="line">4）console.table()：把对象一表格的形式打印出来</div><div class="line">5)document.write:可以吧要输出的内容直接打印在页面上</div><div class="line">6）innerHTML</div></pre></td></tr></table></figure></p>
 <p>obj.innerHTML=’打印在页面上’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">但是需要注意：在window.onload事件中，如果已经有了很多内容，这时候，输出document.write();会彻底的清空页面；所以不要在window.onload中写document.write</div><div class="line">7.控制页卡分析：</div><div class="line">element：调试页面的结构和样式，调好后，直接复制到我们的css样式中</div><div class="line">console：用来打印我们的输出日志的</div><div class="line">network：发送我们请求的所有文件</div><div class="line">8.JS获取元素的方式</div><div class="line">1）document.getElementById</div><div class="line">  文档    得到   元素  通过 id</div><div class="line">  在文档中通过id来获取元素</div><div class="line">2）context:上下文，起限制范围的作用</div><div class="line">9.JS的命名规范：</div><div class="line">匈牙利命名规范就是驼峰命名规范</div><div class="line">类型 前缀  类型   实例</div><div class="line">数组	a	Array	aItems</div><div class="line">布尔值	b	Boolean	bIsComplete</div><div class="line">浮点数	f	Float	fPrice</div><div class="line">函数	fn	Function	fnHandler</div><div class="line">整数	i	Integer	iItemCount</div><div class="line">对象	o	Object	oDiv1</div><div class="line">正则表达式	re	RegExp	reEmailCheck</div><div class="line">字符串	s	String	sUserName</div><div class="line">变体变量	v	Variant	vAnything</div><div class="line">10.对象有两部分组成：</div><div class="line">属性：元素身上固有的特征</div><div class="line">方法：能干什么事</div><div class="line">属性和方法的简单区别：属性没括号，方法有括号</div><div class="line">11.函数：</div><div class="line">1）定义</div><div class="line">2）调用</div><div class="line">函数包括：有名字的函数和匿名函数</div><div class="line">函数的方法：</div></pre></td></tr></table></figure></p>
 <p>function 函数名(){<br>    alert(123)<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">12.变量</div></pre></td></tr></table></figure></p>
@@ -108,123 +123,342 @@ oDiv的style属性上visibility赋值为&#39;visible&#39;</code>=<code>是赋值
     function Array(){};
     3)ary instanceof Array:判断ary是不是Array的一个具体的实例
     4）Object.prototype.toString.call();</code>[object String]`<br>16.字符串：”string”<br>    1）用单引号或者双引号包裹的一到多个字符，都是字符串；2）习惯：一般情况，属性用双引号，字符串用单引号<br>    3）字符串和变量名的区别：字符串有引号，变量没有引号<br>    alert(va)–变量<br>    alert(‘va’)–字符串<br>    error:xx is not defined  这个变量没有被定义<br>    4）字符串的索引(下标)是从0开始；<br>    5）字符串长度通过length属性来拿到<br>    6）当字符串和数字进行相加的时候，”+”的作用是字符串拼接；数学运算中，除了’+’有字符串拼接的功能，其他的-,*,/都是正常的运算；<br>17.数字类型：0 正数 负数 小数 NaN<br>   1）如何把字符串转成数字数据类型<br>   严格转化：Number();<br>   NaN:not a number 不是一个数字；<br>   NaN跟任何值都不相等；包括他自己，也不相等；<br>   NaN出现的情况：<br>     1）转化失败的时候出现NaN<br>     2)不合法的运算，也会出现NaN<br>     isNaN()；检测是否为非有效数字；非有效数字-true<br>     有效数字-false<br>   非严格转化<br>     parseInt():只能进行整数的转化<br>     parseFloat():能进行小数的转化<br>18.boolean：true false<br> Boolean()<br> 规律：除了 0 NaN ‘’ null undefined 为false之外，其他的都为真true<br>19.null和undefined<br>区别：<br>1）null：现在没有，以后会有；<br>  undefined：现在没有，以后也不会有<br>2）隐式转化：<br>null：默认会转化为0；–typeof null-&gt;”object”<br>undefined:默认会转为NaN;–typeof<br>undefined-&gt;”undefined”<br>20.引用数据类型<br>1）对象数据类型 object new Date;<br> 1.对象的增删改查；<br>    1.增加、更改–看情况来处理<br>    obj.name=xx(当name属性不存在的时候，他是增加，否则，他是更改)<br>    2.删除<br>    obj.name=null;–假删除<br>    delete obj.name;–真删除<br>    3.查<br>    alert(obj.name)<br> 2.对象的不重名的特性<br> 3.对象的属性名如果为数字的话，会按照数字顺序pailie<br> 4.对象中的属性如果没有定义–undefined<br>变量如果没有定义–报错<br>2.函数数据类型</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/29/学习笔记/" data-id="cisrmz2s40009ooqs5azptxsh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/08/29/字符串常用方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          字符串常用方法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/08/28/数组常用方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">数组常用方法</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
-    </div>
-  </div>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/09/06/node/">node</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/字符串常用方法/">字符串常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/29/学习笔记/">学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/28/数组常用方法/">数组常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/27/前端开发面试问题及答案整理/">前端开发面试问题及答案整理</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+</div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/08/29/学习笔记/" data-title="学习笔记 | Hexo" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/08/29/字符串常用方法/" title="字符串常用方法">
+  <strong>上一篇：</strong><br/>
+  <span>
+  字符串常用方法</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/08/28/数组常用方法/"  title="数组常用方法">
+ <strong>下一篇：</strong><br/> 
+ <span>数组常用方法
+</span>
+</a>
+</div>
+
 </nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	
 
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day1"><span class="toc-number">1.</span> <span class="toc-text">Day1</span></a></li></ol>
+ 
   </div>
-</body>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2715086553" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="John Doe">John Doe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
 </html>
